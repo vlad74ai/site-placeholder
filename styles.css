@@ -23,7 +23,8 @@ body {
 .placeholder__hint {
   position: absolute;
   left: 50%;
-  bottom: 24px;
+  top: 54%;
+  bottom: auto;
   transform: translateX(-50%);
   padding: 10px 16px;
   border: 1px solid rgba(142, 198, 226, 0.35);
@@ -102,13 +103,14 @@ body {
 
 @media (max-width: 700px) {
   .placeholder {
-    min-height: 82vh;
+    min-height: 100vh;
     background-position: center top;
-    background-size: cover;
+    background-size: contain;
   }
 
   .placeholder__hint {
-    bottom: 16px;
+    top: 54%;
+    bottom: auto;
     width: max-content;
     max-width: calc(100% - 48px);
     text-align: center;
