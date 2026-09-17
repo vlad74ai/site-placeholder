@@ -3,6 +3,8 @@ body {
   margin: 0;
   min-height: 100%;
   background: #07183f;
+  color: #c9d2e8;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 body {
@@ -10,9 +12,113 @@ body {
 }
 
 .placeholder {
+  position: relative;
   min-height: 100vh;
   background-image: url('Placeholder.png?v=1');
   background-repeat: no-repeat;
   background-position: center top;
   background-size: contain;
+}
+
+.placeholder__hint {
+  position: absolute;
+  left: 50%;
+  bottom: 24px;
+  transform: translateX(-50%);
+  padding: 10px 16px;
+  border: 1px solid rgba(142, 198, 226, 0.35);
+  border-radius: 6px;
+  background: rgba(5, 22, 56, 0.82);
+  color: #d9e5f4;
+  font-size: 14px;
+  text-decoration: none;
+  backdrop-filter: blur(6px);
+}
+
+.placeholder__hint:hover {
+  border-color: rgba(142, 198, 226, 0.7);
+  color: #ffffff;
+}
+
+.download-section {
+  padding: 56px 24px 72px;
+  background: linear-gradient(180deg, #07183f 0%, #0a1d49 100%);
+}
+
+.download-card {
+  max-width: 760px;
+  margin: 0 auto;
+  padding-top: 30px;
+  border-top: 1px solid rgba(220, 228, 248, 0.16);
+}
+
+.download-card__kicker {
+  margin: 0 0 14px;
+  color: #b7a9e8;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.download-card h1 {
+  margin: 0 0 18px;
+  color: #f0f3fd;
+  font-size: clamp(26px, 4vw, 36px);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.download-card__text {
+  margin: 0 0 16px;
+  font-size: 18px;
+  line-height: 1.65;
+}
+
+.download-card__meta {
+  margin: 0 0 26px;
+  color: #94a2c4;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.download-card__button {
+  display: inline-flex;
+  align-items: center;
+  min-height: 48px;
+  padding: 0 24px;
+  border: 1px solid rgba(190, 176, 230, 0.75);
+  border-radius: 6px;
+  background: #b7a9e8;
+  color: #10204a;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.download-card__button:hover {
+  background: #c4b8ed;
+}
+
+@media (max-width: 700px) {
+  .placeholder {
+    min-height: 82vh;
+    background-position: center top;
+    background-size: cover;
+  }
+
+  .placeholder__hint {
+    bottom: 16px;
+    width: max-content;
+    max-width: calc(100% - 48px);
+    text-align: center;
+  }
+
+  .download-section {
+    padding: 42px 20px 56px;
+  }
+
+  .download-card__text {
+    font-size: 17px;
+  }
 }
