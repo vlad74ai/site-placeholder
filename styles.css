@@ -40,7 +40,7 @@ body {
   display: inline-flex;
   align-items: center;
   min-height: 34px;
-  padding: 0 13px;
+  padding: 8px 13px;
   border: 1px solid rgba(142, 198, 226, 0.38);
   border-radius: 6px;
   background: rgba(5, 22, 56, 0.84);
@@ -61,8 +61,24 @@ body {
   color: #ffffff;
 }
 
+.download-panel__closed {
+  display: inline-grid;
+  gap: 3px;
+}
+
+.download-panel__status {
+  color: #bdc8df;
+  font-weight: 500;
+}
+
+.download-panel__action {
+  color: #ffffff;
+  font-weight: 700;
+}
+
 .download-panel__open {
   display: none;
+  font-weight: 700;
 }
 
 .download-panel[open] .download-panel__closed {
@@ -128,8 +144,12 @@ body {
 
   .download-panel summary {
     min-height: 28px;
-    padding: 0 9px;
+    padding: 7px 9px;
     font-size: 10px;
+  }
+
+  .download-panel__closed {
+    gap: 2px;
   }
 
   .download-panel__body {
