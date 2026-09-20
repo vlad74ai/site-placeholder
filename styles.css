@@ -99,18 +99,40 @@ body {
   backdrop-filter: blur(8px);
 }
 
-.download-panel h1 {
-  margin: 0 0 9px;
+.download-panel__item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 6px 16px;
+  align-items: start;
+}
+
+.download-panel__item + .download-panel__item {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(220, 228, 248, 0.14);
+}
+
+.download-panel__copy {
+  min-width: 0;
+}
+
+.download-panel h1,
+.download-panel h2 {
+  margin: 0 0 7px;
   color: #f0f3fd;
-  font-size: clamp(16px, 2.2vw, 23px);
-  line-height: 1.2;
-  letter-spacing: -0.015em;
+  font-size: clamp(14px, 1.7vw, 18px);
+  line-height: 1.25;
+  letter-spacing: -0.012em;
 }
 
 .download-panel p {
-  margin: 0 0 9px;
+  margin: 0 0 8px;
   font-size: clamp(12px, 1.55vw, 15px);
   line-height: 1.45;
+}
+
+.download-panel__copy > :last-child {
+  margin-bottom: 0;
 }
 
 .download-panel__meta {
@@ -119,6 +141,9 @@ body {
 
 .download-panel__button {
   display: inline-flex;
+  grid-column: 2;
+  grid-row: 1;
+  align-self: center;
   align-items: center;
   min-height: 34px;
   padding: 0 15px;
@@ -129,6 +154,7 @@ body {
   font-size: clamp(12px, 1.45vw, 14px);
   font-weight: 700;
   text-decoration: none;
+  white-space: nowrap;
 }
 
 .download-panel__button:hover {
@@ -158,18 +184,33 @@ body {
     border-radius: 6px;
   }
 
-  .download-panel h1 {
-    margin-bottom: 6px;
-    font-size: 13px;
+  .download-panel__item {
+    grid-template-columns: 1fr;
+    gap: 7px;
+  }
+
+  .download-panel__item + .download-panel__item {
+    margin-top: 9px;
+    padding-top: 9px;
+  }
+
+  .download-panel h1,
+  .download-panel h2 {
+    margin-bottom: 5px;
+    font-size: 12.5px;
   }
 
   .download-panel p {
-    margin-bottom: 6px;
+    margin-bottom: 5px;
     font-size: 10.5px;
     line-height: 1.35;
   }
 
   .download-panel__button {
+    grid-column: 1;
+    grid-row: auto;
+    justify-self: start;
+    align-self: auto;
     min-height: 28px;
     padding: 0 11px;
     font-size: 10.5px;
