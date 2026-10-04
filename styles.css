@@ -27,6 +27,32 @@ body {
   background-size: 100% 100%;
 }
 
+.channel-notice {
+  position: absolute;
+  z-index: 2;
+  top: 25.8%;
+  left: 7.6%;
+  margin: 0;
+  color: #bdc8df;
+  font-size: clamp(11px, 1.55vw, 16px);
+  line-height: 1.35;
+  font-weight: 500;
+  text-shadow: 0 1px 8px rgba(3, 14, 48, 0.45);
+}
+
+.channel-notice a {
+  color: #ffffff;
+  font-weight: 700;
+  text-decoration-color: rgba(111, 207, 255, 0.85);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.channel-notice a:hover {
+  color: #d7f2ff;
+  text-decoration-color: #b56cff;
+}
+
 .download-panel {
   position: absolute;
   z-index: 2;
@@ -162,6 +188,13 @@ body {
 }
 
 @media (max-width: 700px) {
+  .channel-notice {
+    top: 25.5%;
+    left: 6.5%;
+    max-width: 87%;
+    font-size: 10.5px;
+  }
+
   .download-panel {
     top: 52%;
     left: 6.5%;
