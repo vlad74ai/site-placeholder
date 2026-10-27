@@ -1,0 +1,8 @@
+/* W14 Blog uses the shared internal-page frame, reading measure,
+   typography, palette, background and footer. No independent width or surface. */
+.blog-index .blog-card { margin-block-start: 32px; padding-block: 22px; border-top: 1px solid var(--line-strong); }
+.blog-index .blog-card h2 { margin-block: 14px 10px; }
+.blog-index .blog-card p:last-child { margin-block-end: 0; }
+.blog-note { color: var(--soft); font-size: 15px; line-height: 1.5; }
+.blog-article-body > .blog-note { margin-block: 0 22px; }
+.blog-back { margin-block-start: 35px; padding-block-start: 18px; border-top: 1px solid var(--line-strong); }

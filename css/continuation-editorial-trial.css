@@ -1,0 +1,222 @@
+/* Approved lightweight semantic continuation navigation for all internal articles. */
+main:is([data-topic-id], [data-page-id]) .context-exit--editorial {
+  padding-top: 20px;
+}
+
+main:is([data-topic-id], [data-page-id]) .context-exit--editorial h2 {
+  margin: 0 0 14px;
+}
+
+main:is([data-topic-id], [data-page-id]) .context-exit--editorial .context-exit__routes {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+main:is([data-topic-id], [data-page-id]) .context-exit--editorial .context-exit__item {
+  margin: 0;
+  border-bottom: 1px solid rgba(178, 201, 229, .20);
+}
+
+main:is([data-topic-id], [data-page-id]) .context-exit--editorial .context-exit__item:last-child {
+  border-bottom: 0;
+}
+
+main:is([data-topic-id], [data-page-id]) .context-exit--editorial .context-exit__route {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  min-height: 70px;
+  padding: 12px 10px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--text);
+  transition: background-color .15s ease, color .15s ease;
+}
+
+main:is([data-topic-id], [data-page-id]) .context-exit--editorial .context-exit__route::after {
+  content: none;
+}
+
+main:is([data-topic-id], [data-page-id]) .context-exit--editorial .context-exit__route:hover {
+  background: rgba(178, 201, 229, .09);
+  color: var(--text);
+}
+
+main:is([data-topic-id], [data-page-id]) .context-exit--editorial .context-exit__route:focus-visible,
+main:is([data-topic-id], [data-page-id]) .context-exit--editorial .context-exit__back:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+main:is([data-topic-id], [data-page-id]) .context-exit--editorial .context-exit__body {
+  display: grid;
+  min-width: 0;
+  gap: 4px;
+}
+
+main:is([data-topic-id], [data-page-id]) .context-exit--editorial .context-exit__hint {
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: .055em;
+}
+
+main:is([data-topic-id], [data-page-id]) .context-exit--editorial .context-exit__name {
+  color: var(--text);
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+main:is([data-topic-id], [data-page-id]) .context-exit--editorial .context-exit__arrow {
+  flex: none;
+  color: var(--muted);
+  font-size: 21px;
+  line-height: 1;
+  transition: color .15s ease, transform .15s ease;
+}
+
+main:is([data-topic-id], [data-page-id]) .context-exit--editorial .context-exit__route:hover .context-exit__name,
+main:is([data-topic-id], [data-page-id]) .context-exit--editorial .context-exit__route:hover .context-exit__arrow {
+  color: var(--gold);
+}
+
+main:is([data-topic-id], [data-page-id]) .context-exit--editorial .context-exit__route:hover .context-exit__arrow {
+  transform: translate(2px, -2px);
+}
+
+main:is([data-topic-id], [data-page-id]) .context-exit--editorial .context-exit__return {
+  margin: 16px 0 0;
+}
+
+main:is([data-topic-id], [data-page-id]) .context-exit--editorial .context-exit__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 6px 2px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.55;
+  text-decoration: none;
+}
+
+main:is([data-topic-id], [data-page-id]) .context-exit--editorial .context-exit__back:hover {
+  color: var(--gold);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* About: simple, recognizably underlined links instead of wide navigation rows. */
+main[data-topic-id="ABOUT_SITE"] .context-exit--editorial .context-exit__item {
+  margin: 0 0 0.45rem;
+  border-bottom: 0;
+}
+
+main[data-topic-id="ABOUT_SITE"] .context-exit--editorial .context-exit__route {
+  display: inline-flex;
+  align-items: baseline;
+  justify-content: flex-start;
+  gap: 0.35em;
+  min-height: 0;
+  padding: 0;
+  border-radius: 0;
+  background: none;
+  color: var(--link);
+  transition: none;
+}
+
+main[data-topic-id="ABOUT_SITE"] .context-exit--editorial .context-exit__route:hover {
+  background: none;
+  color: var(--gold);
+}
+
+main[data-topic-id="ABOUT_SITE"] .context-exit--editorial .context-exit__body {
+  display: inline;
+}
+
+main[data-topic-id="ABOUT_SITE"] .context-exit--editorial .context-exit__hint {
+  display: none;
+}
+
+main[data-topic-id="ABOUT_SITE"] .context-exit--editorial .context-exit__name {
+  color: var(--link);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.55;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.22em;
+}
+
+main[data-topic-id="ABOUT_SITE"] .context-exit--editorial .context-exit__arrow {
+  color: var(--link);
+  font-size: 15px;
+  line-height: 1.2;
+  transition: none;
+}
+
+main[data-topic-id="ABOUT_SITE"] .context-exit--editorial .context-exit__route:hover .context-exit__arrow {
+  transform: none;
+}
+
+main[data-topic-id="ABOUT_SITE"] .context-exit--editorial .context-exit__back {
+  color: var(--link);
+  text-decoration: underline;
+  text-underline-offset: 0.22em;
+}
+
+/* On About, practical contacts are the final section after editorial routes. */
+main[data-topic-id="ABOUT_SITE"] .about-contact-section {
+  max-width: 1040px;
+  margin: 34px 0 28px;
+  padding-top: 23px;
+  border-top: 1px solid var(--line-strong);
+}
+
+/* Minimal two-row contacts: readable labels with their own unobtrusive icons. */
+main[data-topic-id="ABOUT_SITE"] .about-contact-section > p {
+  margin: 0 0 12px;
+}
+main[data-topic-id="ABOUT_SITE"] .about-contact-links {
+  display: grid;
+  justify-items: start;
+  gap: 6px;
+}
+main[data-topic-id="ABOUT_SITE"] .about-contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  min-height: 42px;
+  max-width: 100%;
+  color: var(--link);
+  font-size: 18px;
+  line-height: 1.4;
+  text-decoration: none;
+}
+main[data-topic-id="ABOUT_SITE"] .about-contact-icon {
+  display: block;
+  width: 23px;
+  height: 23px;
+  flex: 0 0 23px;
+  color: var(--gold);
+}
+main[data-topic-id="ABOUT_SITE"] .about-contact-link__label {
+  overflow-wrap: anywhere;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: .22em;
+}
+main[data-topic-id="ABOUT_SITE"] .about-contact-link:hover .about-contact-link__label,
+main[data-topic-id="ABOUT_SITE"] .about-contact-link:focus-visible .about-contact-link__label {
+  color: var(--gold);
+}
+
+
+/* The #contacts URL fragment focuses a tabindex="-1" section. Suppress its
+   oversized global focus ring; the two actual links retain focus outlines. */
+main[data-topic-id="ABOUT_SITE"] #contacts:focus-visible {
+  outline: none;
+}

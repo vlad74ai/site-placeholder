@@ -1,0 +1,550 @@
+/* AI В ДЕЛО — wide topic-page layer
+   Loaded after compact.css/home.css/search.css. Keeps the homepage intact and
+   gives topic pages a simple 2/3 text + 1/3 visual reading layout. */
+
+.workspace .shell {
+    width: min(calc(100% - 56px), 1440px);
+}
+
+.workspace__inner {
+    max-width: 1440px;
+}
+
+.workspace__topline {
+    margin-bottom: 22px;
+}
+
+.content-card {
+    border-radius: 18px;
+    background:
+        radial-gradient(circle at 86% 2%, rgba(86, 110, 227, 0.10), transparent 30%),
+        linear-gradient(155deg, rgba(28, 43, 105, 0.92), rgba(11, 19, 54, 0.96));
+}
+
+/* One topic title, then the story starts immediately. */
+.content-card__head {
+    padding: 26px 40px 10px;
+    border-bottom: 0;
+}
+
+.content-card__eyebrow {
+    margin: 0 0 8px;
+}
+
+.content-card h2 {
+    max-width: 1040px;
+    font-size: clamp(34px, 3.1vw, 44px);
+    line-height: 1.06;
+}
+
+.content-card__lead {
+    max-width: 900px;
+    margin-top: 12px;
+    font-size: 17px;
+    line-height: 1.68;
+}
+
+.content-card__body {
+    padding: 12px 40px 46px;
+}
+
+/* Keep the card open around any final floated visual. */
+.content-card__body::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/* The opening sentence is part of the story, not a subtitle. */
+.content-opening,
+.content-card__body > p {
+    max-width: 900px;
+    color: var(--muted);
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+.content-opening {
+    margin: 0 0 18px;
+    color: #dfe5fb;
+    font-weight: 400;
+}
+
+.content-card__body > p {
+    margin: 0 0 18px;
+}
+
+.content-highlight {
+    max-width: 920px;
+    margin: 20px 0 24px;
+    padding: 17px 20px;
+    font-size: 17px;
+    line-height: 1.56;
+    display: flow-root;
+}
+
+.example-panel,
+.compare-strip,
+.capability-grid {
+    max-width: 1180px;
+    clear: both;
+}
+
+.example-panel p,
+.compare-strip__box p {
+    font-size: 16px;
+    line-height: 1.58;
+}
+
+.capability-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+    margin: 26px 0;
+}
+
+.capability-card {
+    min-height: 146px;
+    padding: 19px;
+    border-radius: 13px;
+}
+
+.capability-card strong {
+    font-size: 17px;
+}
+
+.capability-card p {
+    font-size: 14px;
+    line-height: 1.55;
+}
+
+/*
+   A visual occupies roughly the right third, while the explanation remains one
+   continuous reading flow. If the visual is taller than its local paragraph,
+   following text simply continues beside it instead of leaving an empty hole.
+*/
+.illustrated-block {
+    display: block;
+    clear: both;
+    margin: 18px 0 12px;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+}
+
+.illustrated-block__media {
+    float: right;
+    width: min(31.5%, 390px);
+    min-width: 280px;
+    margin: 0 0 14px 34px;
+}
+
+.illustrated-block--reverse .illustrated-block__media {
+    float: left;
+    margin: 0 34px 14px 0;
+}
+
+.illustrated-block__text h3 {
+    max-width: 720px;
+    margin: 0 0 10px;
+    font-size: clamp(21px, 1.8vw, 27px);
+    line-height: 1.18;
+    letter-spacing: -0.018em;
+}
+
+.illustrated-block__text p {
+    max-width: 900px;
+    margin: 0 0 13px;
+    color: var(--muted);
+    font-size: 17px;
+    line-height: 1.68;
+}
+
+.illustrated-block__text p:last-child {
+    margin-bottom: 0;
+}
+
+.illustrated-block__placeholder {
+    min-height: 170px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 8px;
+    padding: 20px;
+    border: 1px dashed rgba(118, 223, 255, 0.34);
+    border-radius: 14px;
+    background:
+        radial-gradient(circle at 75% 20%, rgba(103, 88, 222, 0.24), transparent 38%),
+        linear-gradient(145deg, rgba(20, 43, 102, 0.62), rgba(21, 21, 70, 0.82));
+    box-shadow: inset 0 0 42px rgba(68, 104, 210, 0.06);
+}
+
+.illustrated-block__placeholder span {
+    color: var(--cyan);
+    font-size: 14px;
+    font-weight: 760;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.illustrated-block__placeholder strong {
+    max-width: 360px;
+    font-size: clamp(19px, 1.55vw, 24px);
+    line-height: 1.17;
+}
+
+.illustrated-block__image {
+    width: 100%;
+    max-height: 280px;
+    display: block;
+    object-fit: cover;
+    border-radius: 14px;
+}
+
+.illustrated-block__caption {
+    margin: 8px 2px 0;
+    color: var(--soft);
+    font-size: 16px;
+    line-height: 1.42;
+}
+
+/* Optional hands-on layer. The explanation above must remain complete without it. */
+.practice-block {
+    max-width: 1180px;
+    clear: both;
+    margin: 30px 0 28px;
+    padding: 22px;
+    border: 1px solid rgba(118, 223, 255, 0.24);
+    border-radius: 16px;
+    background:
+        radial-gradient(circle at 94% 0%, rgba(103, 88, 222, 0.20), transparent 34%),
+        linear-gradient(145deg, rgba(18, 37, 91, 0.78), rgba(14, 24, 64, 0.88));
+    box-shadow: inset 0 0 46px rgba(77, 122, 230, 0.05);
+}
+
+.practice-block__head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 18px;
+}
+
+.practice-block__eyebrow {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--cyan);
+    font-size: 15px;
+    font-weight: 760;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.practice-block h3 {
+    margin: 0;
+    font-size: clamp(21px, 1.8vw, 27px);
+    line-height: 1.18;
+}
+
+.practice-block__mark {
+    color: var(--cyan);
+    font-size: 26px;
+    line-height: 1;
+}
+
+.practice-block__intro {
+    max-width: 900px;
+    margin: 12px 0 18px;
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.58;
+}
+
+.practice-services {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 0 0 18px;
+    padding: 14px 16px;
+    border: 1px solid rgba(142, 164, 240, 0.18);
+    border-radius: 12px;
+    background: rgba(8, 18, 52, 0.42);
+}
+
+.practice-services--compact {
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.practice-services__intro {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.practice-services__intro strong {
+    font-size: 14px;
+}
+
+.practice-services__intro span {
+    max-width: 900px;
+    color: var(--soft);
+    font-size: 16px;
+    line-height: 1.48;
+}
+
+.practice-services__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.practice-service-link,
+.practice-copy {
+    border: 1px solid rgba(118, 223, 255, 0.28);
+    border-radius: 9px;
+    background: rgba(26, 52, 119, 0.52);
+    color: #eef4ff;
+    font: inherit;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1;
+    text-decoration: none;
+    cursor: pointer;
+    transition: border-color 120ms ease, background 120ms ease, transform 120ms ease;
+}
+
+.practice-service-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 12px;
+}
+
+.practice-service-link--primary {
+    background: rgba(45, 73, 158, 0.72);
+}
+
+.practice-service-link:hover,
+.practice-copy:hover {
+    border-color: rgba(118, 223, 255, 0.58);
+    background: rgba(39, 73, 157, 0.68);
+}
+
+.practice-service-link:active,
+.practice-copy:active {
+    transform: translateY(1px);
+}
+
+.practice-services__other summary {
+    color: var(--soft);
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.practice-services__other[open] {
+    width: 100%;
+}
+
+.practice-services__other[open] .practice-services__links {
+    margin-top: 10px;
+}
+
+.practice-prompts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 12px;
+}
+
+.practice-prompt {
+    min-width: 0;
+    padding: 15px;
+    border: 1px solid rgba(142, 164, 240, 0.16);
+    border-radius: 12px;
+    background: rgba(7, 16, 45, 0.54);
+}
+
+.practice-prompt__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+.practice-prompt__head strong {
+    font-size: 16px;
+}
+
+.practice-copy {
+    flex: 0 0 auto;
+    padding: 8px 10px;
+}
+
+.practice-copy.is-copied {
+    border-color: rgba(118, 223, 255, 0.62);
+}
+
+.practice-prompt__text {
+    margin: 0;
+    color: #e5ebff;
+    font-size: 14px;
+    line-height: 1.56;
+    white-space: pre-wrap;
+}
+
+.practice-observe {
+    margin-top: 14px;
+    padding-top: 13px;
+    border-top: 1px solid rgba(142, 164, 240, 0.16);
+}
+
+.practice-observe strong {
+    display: block;
+    margin-bottom: 4px;
+    color: var(--cyan);
+    font-size: 16px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.practice-observe p {
+    max-width: 920px;
+    margin: 0;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.55;
+}
+
+.route-panel {
+    max-width: none;
+    clear: both;
+}
+
+@media (max-width: 1100px) {
+    .workspace .shell {
+        width: min(calc(100% - 40px), 1240px);
+    }
+
+    .content-card__head,
+    .content-card__body {
+        padding-left: 34px;
+        padding-right: 34px;
+    }
+
+    .illustrated-block__media {
+        width: 32%;
+        min-width: 260px;
+        margin-left: 28px;
+    }
+
+    .illustrated-block--reverse .illustrated-block__media {
+        margin-right: 28px;
+    }
+}
+
+@media (max-width: 860px) {
+    .workspace .shell {
+        width: min(calc(100% - 28px), 100%);
+    }
+
+    .content-card__head,
+    .content-card__body {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    .illustrated-block,
+    .illustrated-block--reverse {
+        clear: both;
+        margin: 20px 0 24px;
+    }
+
+    .illustrated-block__media,
+    .illustrated-block--reverse .illustrated-block__media {
+        float: none;
+        width: 100%;
+        min-width: 0;
+        margin: 16px 0 0;
+    }
+
+    .illustrated-block__text {
+        display: block;
+    }
+
+    .illustrated-block__placeholder {
+        min-height: 210px;
+    }
+
+    .capability-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .practice-block {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 560px) {
+    .content-card__head,
+    .content-card__body {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .content-card__head {
+        padding-top: 22px;
+        padding-bottom: 8px;
+    }
+
+    .content-card__body {
+        padding-top: 10px;
+    }
+
+    .content-opening,
+    .content-card__body > p,
+    .illustrated-block__text p,
+    .content-highlight {
+        font-size: 16px;
+    }
+
+    .illustrated-block {
+        margin: 18px 0 22px;
+    }
+
+    .illustrated-block__placeholder {
+        min-height: 185px;
+        padding: 18px;
+    }
+
+    .capability-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .practice-block {
+        margin: 24px 0;
+        padding: 17px;
+    }
+
+    .practice-block__mark {
+        display: none;
+    }
+
+    .practice-services--compact {
+        align-items: stretch;
+    }
+
+    .practice-service-link--primary {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .practice-prompts {
+        grid-template-columns: 1fr;
+    }
+
+    .practice-prompt__head {
+        align-items: flex-start;
+    }
+}

@@ -1,0 +1,336 @@
+/* Approved reading layout standard for 22 semantic + 2 authored internal pages.
+   Presentation only; site content and deferred TOC logic are preserved.
+   Remove its <link> to revert the prototype; all existing TOC code and
+   generated semantic data remain preserved for later decisions. */
+
+/* Keep the approved library frame while reclaiming the unused TOC column. */
+main:is([data-topic-id], [data-page-id]) {
+  --internal-reading: 1040px;
+  --internal-breakout: 1040px;
+  --reading-prototype-body: 1040px;
+  --reading-prototype-block: 1040px;
+}
+
+main:is([data-topic-id], [data-page-id]) > .internal-layout {
+  display: block !important;
+  width: min(100%, 1040px);
+  margin: 12px auto 0;
+}
+main:is([data-topic-id], [data-page-id]) .internal-sidebar {
+  display: none !important;
+}
+main:is([data-topic-id], [data-page-id]) .internal-content {
+  width: 100%;
+  min-width: 0;
+  max-width: none;
+}
+main:is([data-topic-id], [data-page-id]) > h1 {
+  grid-column: 1 / -1;
+  justify-self: center;
+  width: min(100%, var(--reading-prototype-body));
+  max-width: var(--reading-prototype-body);
+  margin-inline: auto;
+}
+
+/* Text stays in a continuous, centered reading measure. */
+main:is([data-topic-id], [data-page-id]) .internal-article > p,
+main:is([data-topic-id], [data-page-id]) .internal-article > :is(ul, ol, blockquote),
+main:is([data-topic-id], [data-page-id]) .internal-article > section > :is(p, h2, h3, ul, ol, blockquote),
+main:is([data-topic-id], [data-page-id]) .topic-section > :is(p, h2, h3, ul, ol, blockquote) {
+  width: min(100%, var(--reading-prototype-body));
+  max-width: var(--reading-prototype-body);
+  margin-inline: auto;
+}
+main[data-topic-id] .internal-article > .topic-section {
+  width: 100%;
+  max-width: none;
+  margin-inline: auto;
+}
+main[data-topic-id="WHAT_IS_AI"] .topic-section > .illustrated-block,
+main[data-topic-id="WHAT_IS_AI"] .topic-section > .illustrated-block__text {
+  width: min(100%, var(--reading-prototype-body));
+  max-width: var(--reading-prototype-body);
+  margin-inline: auto;
+}
+
+/* Single-image layout trial. One readable 3:2 illustration after
+   the related prose; never reserve a permanent image column. */
+main[data-topic-id="WHAT_IS_AI"] .illustrated-block__figure {
+  display: grid;
+  gap: 10px;
+  width: min(100%, 660px);
+  margin: 22px auto 20px;
+  padding: 0;
+  background: transparent;
+}
+main[data-topic-id="WHAT_IS_AI"] .illustrated-block__figure .illustrated-block__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border: 1px solid rgba(178, 201, 229, 0.22);
+  border-radius: 12px;
+}
+main[data-topic-id="WHAT_IS_AI"] .illustrated-block__caption {
+  margin: 0;
+  color: var(--soft);
+  font-size: 15px;
+  line-height: 1.55;
+  text-align: center;
+}
+
+/* Same reading measure throughout. Examples and exercises retain their own\n   useful component semantics rather than receiving extra width for decoration. */
+main:is([data-topic-id], [data-page-id]) .internal-article > :is(.example-panel, .practice-block, .checklist, .compare-strip, .content-highlight),
+main:is([data-topic-id], [data-page-id]) .internal-article > section > :is(.example-panel, .practice-block, .checklist, .compare-strip, .content-highlight),
+main[data-topic-id] .topic-section > :is(.example-panel, .practice-block, .checklist, .compare-strip, .content-highlight) {
+  width: min(100%, var(--reading-prototype-block));
+  max-width: var(--reading-prototype-block);
+  margin-inline: auto;
+}
+/* Core thoughts are part of the authorial narrative, not warnings or
+   separate activities. Keep their source type, but render them as normal
+   paragraphs without the former opaque callout or decorative gold border.
+   True examples and practical exercises keep their distinct presentation. */
+main:is([data-topic-id], [data-page-id]) .internal-article .content-highlight {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
+  margin-block: 1rem;
+  color: inherit;
+  font: inherit;
+  line-height: 1.7;
+}
+
+/* Examples and self-assessment retain lightweight visual hierarchy. */
+main:is([data-topic-id], [data-page-id]) .internal-article .example-panel {
+  background: rgba(31, 65, 106, 0.19);
+  border: 1px solid rgba(178, 201, 229, 0.24);
+  border-radius: 12px;
+  box-shadow: none;
+  padding: 18px 20px;
+}
+main:is([data-topic-id], [data-page-id]) .internal-article .example-panel__label {
+  color: var(--gold);
+}
+main:is([data-topic-id], [data-page-id]) .internal-article .checklist {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
+  min-inline-size: 0;
+}
+main:is([data-topic-id], [data-page-id]) .internal-article .checklist-item {
+  background: transparent;
+  border-radius: 6px;
+  border-bottom: 1px solid rgba(177, 197, 224, 0.20);
+  margin: 0;
+  padding: 12px 10px;
+  min-height: 48px;
+}
+main:is([data-topic-id], [data-page-id]) .internal-article .checklist-item:last-child {
+  border-bottom: 0;
+}
+main:is([data-topic-id], [data-page-id]) .internal-article .checklist-item:has(input:checked) {
+  background: rgba(228, 186, 106, 0.075);
+}
+main:is([data-topic-id], [data-page-id]) .internal-article .checklist-item:focus-within {
+  background: rgba(228, 186, 106, 0.11);
+  outline: 1px solid rgba(228, 186, 106, 0.44);
+  outline-offset: -1px;
+}
+
+/* Next steps are normal reading navigation, not a separate filled card.
+   Align with article text; the divider establishes a soft section boundary. */
+main:is([data-topic-id], [data-page-id]) .context-exit {
+  width: min(100%, var(--reading-prototype-body));
+  max-width: var(--reading-prototype-body);
+  margin-inline: auto;
+  margin-block-start: 2.5rem;
+  padding: 1.15rem 0 0;
+  background: transparent;
+  border: 0;
+  border-top: 1px solid rgba(178, 201, 229, 0.26);
+  border-radius: 0;
+  box-shadow: none;
+}
+main:is([data-topic-id], [data-page-id]) .context-exit h2 {
+  font-size: 19px;
+  line-height: 1.5;
+  margin: 0 0 0.7rem;
+  color: var(--gold);
+}
+main:is([data-topic-id], [data-page-id]) .context-exit :is(p, ul) {
+  margin: 0.45rem 0;
+}
+main:is([data-topic-id], [data-page-id]) .context-exit ul {
+  list-style: none;
+  padding-inline-start: 0;
+}
+main:is([data-topic-id], [data-page-id]) .context-exit li {
+  margin-block: 0.55rem;
+}
+main:is([data-topic-id], [data-page-id]) .context-exit a {
+  color: var(--link);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.22em;
+}
+main:is([data-topic-id], [data-page-id]) .context-exit a:hover {
+  color: var(--gold);
+}
+main:is([data-topic-id], [data-page-id]) .context-exit a:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+/* W13: compact continuation links on the two accepted overview pages.
+   Inline arrow stays in the text flow on narrow screens; About is unchanged. */
+main:is([data-page-id="LEARNING-OVERVIEW"], [data-page-id="BUSINESS-OVERVIEW"]) .context-exit > ul > li > a {
+  font-size: 18px;
+  line-height: 1.55;
+  padding-block: 3px;
+}
+main:is([data-page-id="LEARNING-OVERVIEW"], [data-page-id="BUSINESS-OVERVIEW"]) .context-exit > ul > li > a::after {
+  content: "\00a0↗";
+  display: inline;
+  color: currentColor;
+  font-size: 15px;
+  line-height: 1.2;
+}
+main:is([data-topic-id], [data-page-id]) .internal-article h2,
+main:is([data-topic-id], [data-page-id]) .internal-article h3 {
+  text-wrap: pretty;
+}
+
+@media (max-width: 980px) {
+  main:is([data-topic-id], [data-page-id]) {
+    --reading-prototype-body: 100%;
+    --reading-prototype-block: 100%;
+  }
+}
+
+/* Short reading pages: keep footer at the viewport bottom in normal flow.
+   Taller articles still scroll naturally; no fixed/absolute positioning. */
+body.html-first {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+body.html-first > .site-footer--reading-prototype {
+  margin-top: auto;
+  flex-shrink: 0;
+}
+
+/* Learning authorial emphasis: wording stays identical to the approved source. */
+main[data-page-id="LEARNING-OVERVIEW"] .author-accent {
+  font-weight: 700;
+}
+main[data-page-id="LEARNING-OVERVIEW"] .author-accent--key {
+  color: var(--gold);
+  font-weight: 750;
+  font-size: clamp(1.18rem, 1.45vw, 1.42rem);
+  line-height: 1.45;
+}
+
+/* Business page: two author-selected gold emphases. */
+main[data-page-id="BUSINESS-OVERVIEW"] .business-gold-accent {
+  color: var(--gold);
+}
+
+/* Match the actual homepage footer in the reading-layout trial.
+   Homepage owns footer wording and the Telegram destination; do not add a
+   second branding variant for internal articles. Sidebar-reserved body
+   geometry is provided by library-shell.css on both surfaces. */
+.site-footer--reading-prototype {
+  background: #112448ef;
+  border-top: 1px solid var(--line);
+}
+.site-footer--reading-prototype .site-footer__inner {
+  width: var(--frame-width);
+  max-width: 1440px;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 2px;
+  padding: 6px 0 7px;
+  border-top: 1px solid var(--line-strong);
+  /* Match the homepage .site-footer .shell geometry. Centering this
+     container shifts copyright and links left when sidebar occupies space. */
+  margin-left: var(--frame-left);
+  margin-right: auto;
+}
+.site-footer--reading-prototype .site-footer__meta {
+  margin: 0;
+  color: var(--muted);
+  font: 400 15px/1.3 'Manrope', Arial, sans-serif;
+}
+.site-footer--reading-prototype .site-footer__links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 16px;
+  color: var(--soft);
+  font: 400 15px/1.3 'Manrope', Arial, sans-serif;
+}
+.site-footer--reading-prototype .site-footer__links a {
+  color: var(--link);
+  text-decoration: none;
+}
+.site-footer--reading-prototype .site-footer__links a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.site-footer--reading-prototype .site-footer__links a:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+@media (max-width: 560px) {
+  .site-footer--reading-prototype .site-footer__inner {
+    /* Width and left offset follow the same responsive frame as the home. */
+    padding: 9px 8px 10px;
+    gap: 4px;
+  }
+}
+
+
+/* Approved desktop paragraph rhythm for native topics and authored internal articles. */
+@media (min-width: 981px) {
+  /* Match spacing to semantic units: denser lines inside a thought, more
+     separation between completed paragraphs and between topic sections.
+     The practice block is intentionally excluded from these selectors. */
+  main[data-topic-id] .internal-article > .topic-section > p,
+  main[data-page-id] .internal-article > section > p {
+    margin: 0 0 20px;
+    line-height: 1.6;
+  }
+
+  main[data-topic-id] .internal-article > .topic-section > p:last-child,
+  main[data-page-id] .internal-article > section > p:last-child {
+    margin-bottom: 0;
+  }
+
+  main[data-topic-id] .internal-article > .topic-section:not(#topic-practice) + .topic-section:not(#topic-practice),
+  main[data-page-id] .internal-article > section + section {
+    margin-top: 32px;
+  }
+
+  main[data-topic-id] .internal-article > .topic-section > h3,
+  main[data-page-id] .internal-article > section > :is(h2, h3) {
+    margin: 0 0 13px;
+  }
+}
+
+/* One author-approved statement on the About page; original wording stays untouched. */
+main[data-topic-id="ABOUT_SITE"] #topic-intro > p.author-keyline {
+  font-size: clamp(1.45rem, 1.9vw, 1.85rem);
+  line-height: 1.45;
+  font-weight: 650;
+  margin-block: clamp(1.2rem, 2vw, 1.7rem) clamp(1rem, 1.5vw, 1.4rem);
+}

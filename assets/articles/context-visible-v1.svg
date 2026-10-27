@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 480" role="img" aria-labelledby="title desc">
+<title id="title">Важная информация и то, что передано ИИ</title><desc id="desc">Человек знает цель, факты и условия. ИИ видит только сведения, которые человек передал в запросе или материалах.</desc>
+<defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto"><path d="M0 0 8 4 0 8" fill="none" stroke="#e4ba6a" stroke-width="1.5"/></marker></defs>
+<rect width="720" height="480" rx="20" fill="#142b4f"/>
+<g font-family="Manrope,Segoe UI,Arial,sans-serif" text-anchor="middle"><text x="177" y="55" fill="#e4ba6a" font-size="30">Вы знаете</text><text x="545" y="55" fill="#e4ba6a" font-size="30">ИИ видит</text></g>
+<g fill="#21385d" stroke="#b7cee35c"><rect x="40" y="85" width="274" height="84" rx="12"/><rect x="40" y="188" width="274" height="84" rx="12"/><rect x="40" y="291" width="274" height="84" rx="12"/><rect x="408" y="188" width="274" height="84" rx="12" stroke="#e4ba6a"/></g>
+<g font-family="Manrope,Segoe UI,Arial,sans-serif" text-anchor="middle" fill="#f1ebdd" font-size="30"><text x="177" y="137">Цель</text><text x="177" y="240">Факты</text><text x="177" y="343">Условия</text><text x="545" y="240">Ваш запрос</text></g>
+<path d="M328 230H392" fill="none" stroke="#e4ba6a" stroke-width="3" marker-end="url(#arrow)"/>
+<g fill="#c7cdd6" font-family="Manrope,Segoe UI,Arial,sans-serif" font-size="27" text-anchor="middle"><text x="545" y="326">И приложенные</text><text x="545" y="359">материалы</text><text x="360" y="435">Важное нужно передать в разговор</text></g>
+</svg>

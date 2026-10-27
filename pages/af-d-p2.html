@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="ru"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <title>ИИ в рабочих процессах: этапы, циклы и контроль — AI В ДЕЛО</title>
+  <!-- initial-layout:start --><link rel="preload" as="font" type="font/woff2" href="../assets/fonts/manrope-cyrillic-wght-normal.woff2" crossorigin><link rel="preload" as="font" type="font/woff2" href="../assets/fonts/manrope-latin-wght-normal.woff2" crossorigin><link rel="preload" as="font" type="font/woff2" href="../assets/fonts/forum-v19-complete.woff2" crossorigin><script src="../js/initial-layout.js"></script><!-- initial-layout:end -->
+    <link rel="stylesheet" href="../css/internal-pages.css">
+  <link rel="stylesheet" href="../css/search.css">
+  <link rel="stylesheet" href="../css/library-shell.css?v=initial-layout-w7-6">
+  <link rel="stylesheet" href="../css/internal-library.css?v=components-1">
+  <link rel="stylesheet" href="../css/library-components.css?v=1">
+  <link rel="stylesheet" href="../css/library-tools.css?v=map-w8-1">
+  <link rel="stylesheet" href="../css/reading-layout-prototype.css?v=standard-1">
+  <link rel="stylesheet" href="../css/site-route-entrances.css?v=1">
+  <script type="module" src="../js/internal-page.js?v=map-w8-1"></script>
+  <link rel="stylesheet" href="../css/af-originals-preview.css?v=1"><link rel="stylesheet" href="../css/af-unified.css?v=2">
+<!-- seo:start -->
+<meta name="description" content="Как связывать этапы работы с ИИ, проверять промежуточные результаты и возвращаться к предыдущим шагам, когда требуется исправление.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://ai-v-delo.ru/pages/af-d-p2.html">
+<meta property="og:title" content="ИИ в рабочих процессах: этапы, циклы и контроль — AI В ДЕЛО">
+<meta property="og:description" content="Как связывать этапы работы с ИИ, проверять промежуточные результаты и возвращаться к предыдущим шагам, когда требуется исправление.">
+<meta property="og:url" content="https://ai-v-delo.ru/pages/af-d-p2.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ru_RU">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://ai-v-delo.ru/#website","name":"AI В ДЕЛО","url":"https://ai-v-delo.ru/","inLanguage":"ru"},{"@type":"Article","@id":"https://ai-v-delo.ru/pages/af-d-p2.html#content","url":"https://ai-v-delo.ru/pages/af-d-p2.html","inLanguage":"ru","headline":"ИИ в рабочих процессах: этапы, циклы и контроль","isPartOf":{"@id":"https://ai-v-delo.ru/#website"}}]}</script>
+<!-- seo:end -->
+<!-- statistics-consent:head:start --><link rel="stylesheet" href="../css/statistics-consent.css"><script type="module" src="../js/statistics-consent.js"></script><!-- statistics-consent:head:end -->
+  <link rel="stylesheet" href="../css/hairline-controls.css?v=w12-1">
+</head><body class="html-first hairline-ui">
+<a class="skip-link" href="#main-content">К содержанию</a>
+<!-- shared-header:start -->
+<header class="site-header" id="top"><div class="shell site-header__inner">
+<div class="site-header__identity"><a class="brand" href="../index.html" aria-label="AI В ДЕЛО — на главную"><span class="brand__ai">AI</span> <span class="brand__text">В ДЕЛО</span></a><span class="site-header__definition">AI — искусственный<br>интеллект (ИИ)</span></div>
+<button class="sidebar-toggle" type="button" data-sidebar-toggle aria-expanded="true" aria-label="Свернуть боковое меню"><span class="sidebar-toggle__symbol" aria-hidden="true"></span><span class="sidebar-toggle__label">Свернуть меню</span></button>
+<nav class="primary-nav" data-primary-nav aria-label="Основное меню"><details class="primary-nav__group primary-nav__group--benefits" data-menu-group="benefits"><summary aria-label="Польза ИИ"><span class="ui-icon sidebar-nav-emblem" aria-hidden="true" data-sidebar-icon="benefits"></span><span class="sidebar-nav-label">Польза ИИ</span><span class="ui-icon ui-icon--chevron-down" aria-hidden="true"></span></summary><div class="primary-nav__panel"><a data-nav-item="benefits-a" href="../pages/af-a-p1.html">Что такое ИИ и что он умеет</a><a data-nav-item="benefits-b" href="../pages/benefits.html#direction-b">Как получать полезный результат</a><a data-nav-item="benefits-c" href="../pages/benefits.html#direction-c">Как работать с ИИ эффективнее</a><a data-nav-item="benefits-d" href="../pages/benefits.html#direction-d">ИИ в рабочих процессах</a><a data-nav-item="benefits-e" href="../pages/benefits.html#direction-e">Польза ИИ для бизнеса</a><a data-nav-item="benefits-f" href="../pages/benefits.html#direction-f">Оценить свой уровень</a></div></details>
+<details class="primary-nav__group primary-nav__group--learning" data-menu-group="learning"><summary aria-label="Обучение"><span class="ui-icon sidebar-nav-emblem" aria-hidden="true" data-sidebar-icon="learning"></span><span class="sidebar-nav-label">Обучение</span><span class="ui-icon ui-icon--chevron-down" aria-hidden="true"></span></summary><div class="primary-nav__panel"><a data-nav-item="learning-overview" data-page-id="LEARNING-OVERVIEW" href="../pages/learning.html">Зачем учиться работе с ИИ</a></div></details>
+<details class="primary-nav__group primary-nav__group--business" data-menu-group="business"><summary aria-label="Для бизнеса"><span class="ui-icon sidebar-nav-emblem" aria-hidden="true" data-sidebar-icon="business"></span><span class="sidebar-nav-label">Для бизнеса</span><span class="ui-icon ui-icon--chevron-down" aria-hidden="true"></span></summary><div class="primary-nav__panel"><a data-nav-item="business-overview" data-page-id="BUSINESS-OVERVIEW" href="../pages/business.html">С чего начинается применение ИИ в бизнесе</a></div></details>
+<details class="primary-nav__group primary-nav__group--materials" data-menu-group="materials"><summary aria-label="Материалы"><span class="ui-icon sidebar-nav-emblem" aria-hidden="true" data-sidebar-icon="materials"></span><span class="sidebar-nav-label">Материалы</span><span class="ui-icon ui-icon--chevron-down" aria-hidden="true"></span></summary><div class="primary-nav__panel"><a data-nav-item="materials-equalizer" href="../assets/downloads/AI-V-DELO_Equalizer.pdf" download="AI-V-DELO_Equalizer.pdf" type="application/pdf">Эквалайзер (PDF)</a><a data-nav-item="materials-four-sheets" href="../assets/downloads/AI-V-DELO_4-lista-polzy.pdf" download="AI-V-DELO_4-lista-polzy.pdf" type="application/pdf">4 листа пользы (PDF)</a></div></details>
+<div class="primary-nav__group primary-nav__group--blog" data-menu-group="blog"><a class="primary-nav__direct" data-nav-item="blog" href="../blog/index.html"><span class="ui-icon sidebar-nav-emblem" aria-hidden="true" data-sidebar-icon="blog"></span><span class="sidebar-nav-label">Блог</span></a></div></nav>
+<div class="site-header__service"><p class="site-header__motto">Понимай. Используй. Развивайся.</p><div class="site-header__actions" aria-label="Инструменты сайта"><a class="header-action" data-utility="about" href="../pages/about-site.html"><span class="ui-icon ui-icon--book-open" aria-hidden="true"></span><span>О сайте</span></a>
+<a class="header-action" data-utility="map" href="../index.html?tool=map" data-map-open><span class="ui-icon ui-icon--map" aria-hidden="true"></span><span>Карта</span></a>
+<a class="header-action" data-utility="learn" href="../pages/learn-with-ai.html"><span class="ui-icon ui-icon--graduation-cap" aria-hidden="true"></span><span>Изучить с ИИ</span></a></div></div>
+</div></header>
+<!-- shared-header:end -->
+<main id="main-content" class="internal-workspace" data-page-id="D-P2" data-af-preview="D-P2" data-af-canonical="true" tabindex="-1">
+  <div class="breadcrumbs"><a href="../index.html">Главная</a> / <a href="benefits.html#direction-d">Польза ИИ</a> / D-P2</div>
+  <h1>Связанные этапы, циклы и контроль</h1>
+  <div class="internal-layout"><div class="internal-content">
+  <article class="internal-article af-preview-article" data-source-article="D-P2">
+    <nav class="af-preview-navigation"><a href="benefits.html#direction-d">← Темы направления</a></nav>
+    <div class="af-preview-copy"><p>Многие рабочие задачи состоят не из одного действия, а из нескольких этапов: получили информацию, обработали её, проверили результат, приняли решение и передали дальше. Если ИИ участвует только в одном таком этапе, всё довольно просто. Но когда он начинает работать сразу в нескольких местах, важно уже не только то, <strong>что именно он делает</strong>, но и <strong>как этапы связаны между собой</strong>.</p>
+<p>Здесь речь уже не просто о доработке одного ответа в диалоге. Теперь несколько этапов самой работы зависят друг от друга, а между ними появляются проверки, решения и возвраты.</p>
+<h2>Результат одного этапа становится началом следующего</h2>
+<p>Допустим, компания получает документы от клиентов. Работа может выглядеть так:</p>
+<p><strong>получить документ → извлечь нужные данные → проверить их → определить проблему → подготовить результат → передать сотруднику</strong></p>
+<p>Если ИИ участвует в нескольких этапах, каждый следующий шаг зависит от предыдущего. Например:</p>
+<p><strong>ИИ извлёк данные → проверил их по правилам → отметил отклонения → подготовил краткое объяснение</strong></p>
+<p>После этого человек уже работает не с исходным документом, а с подготовленным результатом. То есть важно не только хорошо выполнить каждый отдельный шаг. Нужно, чтобы <strong>результат одного шага подходил для следующего</strong>.</p>
+<h2>Между этапами появляются точки контроля</h2>
+<p>Не каждый результат ИИ стоит сразу передавать дальше. Иногда следующий шаг можно выполнять автоматически. Иногда сначала нужна проверка человека. Например:</p>
+<p><strong>ИИ получил документ → выделил нужные данные → человек проверил важные значения → ИИ подготовил итог</strong><br>Или: <strong>ИИ подготовил ответ клиенту → человек посмотрел его → ИИ отправил письмо после подтверждения</strong></p>
+<p>В другом процессе контроль может понадобиться только тогда, когда возникло исключение:</p>
+<p><strong>всё соответствует правилам → работа продолжается дальше</strong></p>
+<p><strong>что-то не совпало → подключается человек</strong></p>
+<p>Так человек не обязан вручную проверять каждое обычное действие, но остаётся там, где действительно нужно именно его решение.</p>
+<h2>Иногда работа возвращается назад</h2>
+<p>Не все процессы идут только вперёд. Допустим, ИИ подготовил результат, а человек видит, что информации недостаточно. Тогда работа может вернуться на предыдущий шаг:</p>
+<p><strong>задача → работа ИИ → проверка → уточнение → новая работа ИИ → повторная проверка</strong></p>
+<p>Это уже цикл. Такие циклы постоянно встречаются и без ИИ. Сотрудник подготовил документ — руководитель вернул его на исправление. Поставщик прислал предложение — появились дополнительные вопросы. Клиент посмотрел вариант — попросил изменить условия. С ИИ происходит то же самое. Просто часть работы внутри цикла можно выполнять быстрее.</p>
+<h2>Цикл нужен не всегда</h2>
+<p>Простую задачу нет смысла специально превращать в сложную схему. Если ИИ подготовил хороший результат и больше ничего делать не нужно, работа закончена. Цикл появляется тогда, когда результат нужно:</p>
+<ul><li>проверить;</li>
+<li>дополнить;</li>
+<li>согласовать;</li>
+<li>изменить;</li>
+<li>использовать для следующего решения;</li>
+<li>вернуть на доработку.</li></ul>
+<p>Поэтому сам по себе цикл не делает работу лучше. Он полезен там, где <strong>так устроена сама задача</strong>.</p>
+<h2>Несколько этапов нужно координировать</h2>
+<p>Представим более длинную работу:</p>
+<p><strong>получить запрос клиента → найти данные → подготовить вариант решения → проверить условия → согласовать → подготовить документы → отправить клиенту</strong></p>
+<p>Здесь уже мало просто сказать: «Используем ИИ на трёх этапах». Нужно понимать: когда каждый этап начинается, что он получает на входе, какой результат должен передать дальше, где требуется проверка, кто принимает решение, что делать, если что-то пошло не так. Это и есть координация работы. Без неё несколько хороших действий могут всё равно плохо складываться в одно целое.</p>
+<h2>Человек может участвовать не в каждом шаге</h2>
+<p>Когда работа состоит из многих этапов, важный вопрос — <strong>где именно нужен человек</strong>. Например, нет смысла каждый раз вручную подтверждать, что ИИ нашёл нужный файл, если ошибка легко обнаруживается позже и ничего серьёзного не произойдёт. Но перед отправкой важного документа клиенту проверка может быть необходима. Поэтому человек может подключаться не постоянно, а в определённых точках:</p>
+<p><strong>где высока цена ошибки; где требуется решение; где есть исключение; где действие трудно отменить.</strong></p>
+<p>Остальные этапы могут проходить без постоянного вмешательства.</p>
+<h2>Что важно понять на этом уровне</h2>
+<p>Когда ИИ участвует в нескольких частях работы, важно смотреть уже не только на отдельные запросы. Нужно видеть всю цепочку:</p>
+<p><strong>что запускает работу → какие этапы идут дальше → что передаётся между ними → где нужен контроль → где принимается решение → когда работа возвращается назад</strong></p>
+<p>Так отдельные действия начинают складываться в связанную систему. И здесь появляется следующий шаг. Если такая схема хорошо работает и нужна не один раз, возникает вопрос: <strong>как сделать так, чтобы она не зависела каждый раз от памяти и импровизации конкретного человека?</strong><br>То есть как превратить удачный способ работы в <strong>повторяемый процесс</strong>.</p></div>
+    <nav class="af-preview-navigation"><a href="benefits.html#direction-d">← Темы направления</a><a href="af-d-p3.html">Далее: От удачного способа к повторяемому процессу →</a></nav>
+  </article></div></div>
+</main>
+<!-- shared-tools:start -->
+    <dialog class="site-map-panel" id="site-map-panel" data-map-drawer aria-labelledby="map-title" aria-describedby="map-intro" aria-modal="false">
+        <div class="site-map__header">
+            <h2 id="map-title" tabindex="-1">Карта сайта</h2>
+            <button class="site-map__close" type="button" data-map-close aria-label="Закрыть карту">×</button>
+        </div>
+        <p class="site-map__intro" id="map-intro">✓ — вы уже открывали эту страницу. Это не оценка знаний и не процент прохождения.</p>
+        <nav class="site-map__body" data-map-groups aria-label="Страницы сайта"></nav>
+    </dialog>
+
+    <dialog class="tool-dialog tool-dialog--equalizer" data-equalizer-drawer aria-labelledby="equalizer-title">
+        <div class="drawer__head">
+            <div>
+                <span class="utility-kicker">ЭКВАЛАЙЗЕР</span>
+                <h2 id="equalizer-title">Настройте сайт под себя</h2>
+            </div>
+            <button class="icon-button" type="button" data-equalizer-close aria-label="Закрыть эквалайзер">×</button>
+        </div>
+        <p class="drawer__intro">Эквалайзер меняет способ подачи, а не определяет ваш «уровень». Настройки можно менять в любой момент.</p>
+
+        <p class="tool-presentation-note" data-fixed-article-note hidden>Эта статья имеет единую подачу. Настройки сложности и подробности сохранятся для остальных тем.</p>
+
+        <section class="setting-group" aria-labelledby="difficulty-title">
+            <div class="setting-group__head">
+                <h3 id="difficulty-title">Сложность</h3>
+                <span data-setting-level-label>Нейтральная подача</span>
+            </div>
+            <div class="segmented" data-level-controls>
+                <button type="button" data-level="beginner">Новичок</button>
+                <button type="button" data-level="explorer">Исследователь</button>
+                <button type="button" data-level="practitioner">Практик</button>
+                <button type="button" data-level="specialist">Специалист</button>
+            </div>
+            <p>Если ничего не выбирать, сайт остаётся в нейтральной понятной подаче.</p>
+        </section>
+
+        <section class="setting-group" aria-labelledby="detail-title">
+            <div class="setting-group__head">
+                <h3 id="detail-title">Подробность</h3>
+            </div>
+            <div class="segmented segmented--three" data-detail-controls>
+                <button type="button" data-detail="short">Коротко</button>
+                <button type="button" data-detail="normal">Обычно</button>
+                <button type="button" data-detail="detailed">Подробно</button>
+            </div>
+        </section>
+
+        <section class="setting-group" aria-labelledby="helper-title">
+            <div class="setting-group__head">
+                <h3 id="helper-title">Хочуха</h3>
+            </div>
+            <div class="segmented segmented--four" data-helper-controls>
+                <button type="button" data-helper="off">Выкл.</button>
+                <button type="button" data-helper="minimal">Редко</button>
+                <button type="button" data-helper="normal">Обычно</button>
+                <button type="button" data-helper="active">Активно</button>
+            </div>
+        </section>
+
+        <section class="setting-group setting-group--switches">
+            <label class="switch-row">
+                <span>
+                    <strong>Карта</strong>
+                    <small>Показывать кнопку Карты в шапке</small>
+                </span>
+                <input type="checkbox" data-map-setting checked>
+            </label>
+            <label class="switch-row">
+                <span>
+                    <strong>Память сайта</strong>
+                    <small>Хранить настройки и просмотренное только на этом устройстве</small>
+                </span>
+                <input type="checkbox" data-memory-setting checked>
+            </label>
+        </section>
+
+        <button class="reset-button" type="button" data-reset-site>Сбросить историю и настройки</button>
+    </dialog>
+
+<!-- shared-tools:end -->
+<footer class="site-footer site-footer--reading-prototype">
+        <div class="shell site-footer__inner">
+            <p class="site-footer__meta">© 2026 AI В ДЕЛО</p>
+            <nav class="site-footer__links" aria-label="Ссылки в подвале">
+                <a href="../pages/about-site.html">О сайте</a>
+                <a href="https://t.me/+aXnipBF0Sho3NjYy" target="_blank" rel="noopener noreferrer">Telegram ↗</a>
+                <a href="../pages/about-site.html#contacts">Контакты</a>
+            <!-- statistics-settings:start --><a href="../pages/about-site.html#statistics-privacy" data-statistics-settings>Настройки статистики</a><!-- statistics-settings:end --></nav>
+        </div>
+    </footer>
+<!-- statistics-consent:body:start --><section class="statistics-consent" data-statistics-consent role="region" aria-label="Статистика посещений" hidden><p class="statistics-consent__copy">Наш сайт использует файлы cookie для сбора статистики посещений. <a href="../pages/about-site.html#statistics-privacy">Подробнее</a></p><div class="statistics-consent__actions"><button type="button" data-statistics-accept>Принять</button><button type="button" data-statistics-decline>Отклонить</button></div></section><!-- statistics-consent:body:end --></body></html>

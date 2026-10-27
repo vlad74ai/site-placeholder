@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 480" role="img" aria-labelledby="title desc">
+<title id="title">Расширение способов работы с ИИ</title><desc id="desc">Собеседник помогает обсудить вопрос, инструмент подготовить результат, сотрудник участвовать в последовательности работы.</desc>
+<defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto"><path d="M0 0 8 4 0 8" fill="none" stroke="#e4ba6a" stroke-width="1.5"/></marker></defs>
+<rect width="720" height="480" rx="20" fill="#142b4f"/>
+<g fill="#21385d" stroke="#b7cee35c"><rect x="36" y="76" width="648" height="92" rx="12"/><rect x="36" y="206" width="648" height="92" rx="12"/><rect x="36" y="336" width="648" height="92" rx="12"/></g>
+<g fill="#e4ba6a" font-family="Manrope,Segoe UI,Arial,sans-serif" font-size="27"><text x="60" y="132">Собеседник</text><text x="60" y="262">Инструмент</text><text x="60" y="392">Сотрудник</text></g>
+<g fill="#f1ebdd" font-family="Manrope,Segoe UI,Arial,sans-serif" font-size="28"><text x="310" y="132">Обсудить вопрос</text><text x="310" y="262">Подготовить результат</text><text x="310" y="392">Включить в работу</text></g>
+<g stroke="#e4ba6a" stroke-width="2.5" marker-end="url(#arrow)"><path d="M360 178V194"/><path d="M360 309V324"/></g>
+</svg>

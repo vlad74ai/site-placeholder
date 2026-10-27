@@ -1,0 +1,285 @@
+/* W12 Hairline v1: accepted tokens and controls, shared across styled pages.
+   No runtime JS, content, layout architecture or feature switches change. */
+body.hairline-ui {
+  --hl-line: rgba(188, 206, 228, .30);
+  --hl-line-soft: rgba(188, 206, 228, .21);
+  --hl-accent: rgba(228, 186, 106, .82);
+  --hl-selected: rgba(228, 186, 106, .075);
+  --hl-hover: rgba(188, 206, 228, .075);
+}
+
+/* W10 — one choice, native radio semantics and 44px target. */
+body.hairline-ui .learn-ai__choices { gap: .5rem .75rem; }
+body.hairline-ui .learn-ai__choices label {
+  min-height: 44px;
+  padding: .5rem .85rem;
+  border: 1px solid var(--hl-line-soft);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text);
+  font-weight: 450;
+}
+body.hairline-ui .learn-ai__choices label:has(:checked) {
+  border-color: var(--hl-accent);
+  background: var(--hl-selected);
+  color: var(--link);
+}
+body.hairline-ui .learn-ai__choices label:hover {
+  border-color: var(--hl-accent);
+  background: var(--hl-hover);
+}
+body.hairline-ui .learn-ai__choices input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--gold);
+}
+body.hairline-ui .learn-ai__choices label:focus-within {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+/* The primary action has a fine contour; plain text controls retain
+   the lighter editorial presentation. The existing copy glyph is retained. */
+body.hairline-ui .learn-ai__copy {
+  min-height: 44px;
+  padding: .55rem .85rem;
+  background: transparent;
+  border: 1px solid var(--hl-accent);
+  border-radius: 8px;
+  color: var(--link);
+  font-weight: 600;
+  box-shadow: none;
+}
+body.hairline-ui .learn-ai__copy:hover:not(:disabled) {
+  background: var(--hl-hover);
+  border-color: var(--gold);
+}
+body.hairline-ui .learn-ai__copy:disabled { opacity: .65; cursor: wait; }
+body.hairline-ui .learn-ai__prompt summary {
+  color: var(--link);
+  text-decoration: underline;
+  text-decoration-color: rgba(228, 186, 106, .54);
+  text-underline-offset: 4px;
+}
+body.hairline-ui .learn-ai__file-links a {
+  color: var(--link);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+body.hairline-ui .learn-ai__prompt textarea {
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+
+/* A real authorial A–F practice block: keep the secondary copy action
+   visually quiet but give it an unmistakable icon and ample hit area. */
+body.hairline-ui main:is([data-topic-id], [data-page-id]) .practice-prompt--editorial .practice-copy {
+  min-height: 44px;
+  padding: .45rem .7rem;
+  border: 1px solid var(--hl-line-soft);
+  border-radius: 7px;
+  background: transparent;
+  color: var(--link);
+}
+body.hairline-ui main:is([data-topic-id], [data-page-id]) .practice-prompt--editorial .practice-copy:hover {
+  background: var(--hl-hover);
+  border-color: var(--hl-accent);
+}
+body.hairline-ui main:is([data-topic-id], [data-page-id]) .practice-prompt--editorial .practice-copy.is-copied {
+  border-color: var(--hl-accent);
+  color: var(--gold);
+}
+
+/* W8 Map: a clear linked row without a solid button tile. */
+body.hairline-ui .site-map__link {
+  min-height: 44px;
+  border: 1px solid var(--hl-line-soft);
+  border-radius: 7px;
+  background: transparent;
+  color: var(--text);
+}
+body.hairline-ui .site-map__link .site-map__label {
+  text-decoration: underline;
+  text-decoration-color: rgba(183, 198, 219, .40);
+  text-underline-offset: 3px;
+}
+body.hairline-ui .site-map__link.is-current {
+  border-color: var(--hl-accent);
+  background: var(--hl-selected);
+}
+body.hairline-ui .site-map__link:hover {
+  background: var(--hl-hover);
+  border-color: var(--hl-accent);
+  color: var(--link);
+}
+body.hairline-ui .site-map__close {
+  background: transparent;
+  border: 1px solid var(--hl-line);
+  border-radius: 8px;
+}
+body.hairline-ui .site-map__close:hover {
+  background: var(--hl-hover);
+  border-color: var(--hl-accent);
+}
+
+/* Equalizer controls: consistent hairline, soft active state, no new JS. */
+body.hairline-ui .tool-dialog .segmented button {
+  min-height: 44px;
+  padding: .55rem .65rem;
+  background: transparent;
+  border: 1px solid var(--hl-line);
+  border-radius: 8px;
+  color: var(--text);
+}
+body.hairline-ui .tool-dialog .segmented button.is-active {
+  border-color: var(--hl-accent);
+  background: var(--hl-selected);
+  color: var(--link);
+}
+body.hairline-ui .tool-dialog .segmented button:hover:not(:disabled) {
+  background: var(--hl-hover);
+  border-color: var(--hl-accent);
+}
+body.hairline-ui .tool-dialog .icon-button {
+  background: transparent;
+  border: 1px solid var(--hl-line);
+  border-radius: 8px;
+}
+body.hairline-ui .tool-dialog .icon-button:hover {
+  background: var(--hl-hover);
+  border-color: var(--hl-accent);
+}
+body.hairline-ui .tool-dialog .reset-button {
+  width: auto;
+  min-height: 44px;
+  padding: .6rem .9rem;
+  background: transparent;
+  border: 1px solid var(--hl-line);
+  border-radius: 8px;
+  color: var(--link);
+}
+body.hairline-ui .tool-dialog .reset-button:hover {
+  background: var(--hl-hover);
+  border-color: var(--hl-accent);
+}
+/* Keep native checkbox semantics; the full label remains clickable. */
+body.hairline-ui .tool-dialog .switch-row input {
+  appearance: none;
+  flex: 0 0 22px;
+  width: 22px;
+  height: 22px;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--hl-accent);
+  border-radius: 5px;
+  background: transparent;
+  color: var(--gold);
+  cursor: pointer;
+}
+body.hairline-ui .tool-dialog .switch-row input:checked {
+  background: var(--hl-selected);
+}
+body.hairline-ui .tool-dialog .switch-row input:checked::after {
+  content: "✓";
+  font: 700 16px/1 Manrope, sans-serif;
+}
+body.hairline-ui :is(button, input, summary, a):focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+@media (max-width: 560px) {
+  body.hairline-ui .learn-ai__choices {
+    gap: .4rem;
+  }
+  body.hairline-ui .learn-ai__choices label {
+    width: 100%;
+  }
+  body.hairline-ui .tool-dialog .reset-button {
+    width: 100%;
+  }
+}
+
+/* Other live copy/TOC/actions reuse the same quiet contour. */
+body.hairline-ui :is(.copy-button, .practice-copy, .practice-service-link, .route-button),
+body.hairline-ui :is(.toc-controls, .toc-dialog, .depth-controls) button {
+ min-height: 44px;
+ background: transparent;
+ border: 1px solid var(--hl-line-soft);
+ border-radius: 8px;
+ color: var(--link);
+ box-shadow: none;
+}
+body.hairline-ui :is(.copy-button, .practice-service-link--primary) { border-color: var(--hl-accent); }
+body.hairline-ui :is(.copy-button, .practice-copy, .practice-service-link, .route-button):hover:not(:disabled),
+body.hairline-ui :is(.toc-controls, .toc-dialog, .depth-controls) button:hover:not(:disabled) {
+ background: var(--hl-hover);
+ border-color: var(--hl-accent);
+}
+body.hairline-ui .copyable-block[data-copy-state="success"] .copy-button,
+body.hairline-ui .practice-copy.is-copied { color: var(--gold); border-color: var(--hl-accent); }
+body.hairline-ui :is(button:disabled, [aria-disabled="true"]) { opacity: .65; cursor: not-allowed; }
+body.hairline-ui :is(button[aria-busy="true"], .learn-ai__copy:disabled) { cursor: wait; }
+
+/* Editorial links remain visibly linked; navigation keeps its own geometry. */
+body.hairline-ui :is(.internal-article, .breadcrumbs, .site-footer, .internal-toc, .toc-dialog) a,
+body.hairline-ui .practice-services__other > summary {
+ text-decoration: underline;
+ text-decoration-color: var(--hl-accent);
+ text-underline-offset: 3px;
+}
+body.hairline-ui .internal-article summary {
+ min-height: 44px;
+ color: var(--link);
+ text-decoration: underline;
+ text-decoration-color: var(--hl-accent);
+ text-underline-offset: 4px;
+}
+body.hairline-ui .checklist-item input[type="checkbox"] {
+ appearance: none;
+ display: inline-grid;
+ place-items: center;
+ flex: 0 0 20px;
+ width: 20px;
+ height: 20px;
+ border: 1px solid var(--hl-accent);
+ border-radius: 5px;
+ background: transparent;
+ color: var(--gold);
+ cursor: pointer;
+}
+body.hairline-ui .checklist-item input:checked { background: var(--hl-selected); }
+body.hairline-ui .checklist-item input:checked::after { content: "✓"; font: 700 16px/1 Manrope, sans-serif; }
+body.hairline-ui main:is([data-topic-id], [data-page-id]) .checklist-item:has(input:checked) { background: var(--hl-selected); }
+
+/* Search clear gets a real 44px cell, never an invisible overlapping hit area. */
+body.hairline-ui .site-search__field { grid-template-columns: 22px minmax(0, 1fr) 44px; padding-right: 4px; }
+body.hairline-ui .site-search__clear {
+ width: 44px;
+ height: 44px;
+ min-height: 44px;
+ background: transparent;
+ border: 1px solid var(--hl-line-soft);
+ border-radius: 7px;
+ color: var(--link);
+}
+body.hairline-ui .site-search__result { min-height: 44px; background: transparent; border-color: var(--hl-line-soft); }
+body.hairline-ui .site-search__result:is(:hover, :focus-visible),
+body.hairline-ui .site-search__clear:hover { background: var(--hl-hover); border-color: var(--hl-accent); }
+
+/* Keep the accepted sidebar positions, widths and all visibility selectors. */
+html[data-sidebar-ready="true"] body.hairline-ui .site-header .sidebar-toggle {
+ background: transparent;
+ border-color: var(--hl-line);
+ box-shadow: none;
+}
+html[data-sidebar-ready="true"] body.hairline-ui .site-header .sidebar-toggle:hover,
+html[data-sidebar-ready="true"] body.hairline-ui .site-header .primary-nav summary:hover,
+html[data-sidebar-ready="true"] body.hairline-ui .site-header .primary-nav__group[open] summary {
+ background: var(--hl-hover);
+ color: var(--link);
+}
+body.hairline-ui .primary-nav__panel a { text-decoration: underline; text-underline-offset: 3px; }
+body.hairline-ui .primary-nav__panel a:hover,
+body.hairline-ui .primary-nav__panel a[aria-current="page"] { background: var(--hl-selected); color: var(--link); }
+body.hairline-ui .header-action:hover { background: var(--hl-hover); }

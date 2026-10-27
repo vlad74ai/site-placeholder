@@ -1,0 +1,34 @@
+/* Direction navigator: single editorial overview, not four competing page menus. */
+main:is([data-page-id="BENEFITS-INDEX"],[data-page-id="LEARNING-OVERVIEW"],[data-page-id="BUSINESS-OVERVIEW"]) .internal-layout {
+  display: block; width: min(100%,1040px); margin: 12px auto 0;
+}
+main:is([data-page-id="BENEFITS-INDEX"],[data-page-id="LEARNING-OVERVIEW"],[data-page-id="BUSINESS-OVERVIEW"]) > h1,
+main:is([data-page-id="BENEFITS-INDEX"],[data-page-id="LEARNING-OVERVIEW"],[data-page-id="BUSINESS-OVERVIEW"]) > .breadcrumbs {
+  width: min(100%,1040px); margin-inline: auto;
+}
+.route-guide { max-width:1040px; margin-inline:auto; font-size:19px; line-height:1.6; }
+.route-guide > p { margin:0 0 20px; }
+.route-guide__lead { max-width:80ch; }
+.route-guide__toc { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin:28px 0 38px; }
+.route-guide__toc a { display:flex; align-items:center; justify-content:space-between; gap:16px; padding:18px 20px; border:1px solid rgba(178,201,229,.28); border-radius:10px; background:rgba(24,57,98,.19); color:var(--text); text-decoration:none; }
+.route-guide__toc a:hover,.route-guide__toc a:focus-visible { border-color:var(--gold); background:rgba(178,201,229,.09); }
+.route-guide__toc strong { font-weight:600; }
+.route-guide__toc span { white-space:nowrap; color:var(--muted); font-size:14px; }
+.route-guide__section { scroll-margin-top:20px; padding-top:26px; margin-top:30px; border-top:1px solid rgba(178,201,229,.29); }
+.route-guide__section h2 { margin:0 0 14px; font-size:25px; }
+.route-guide__section p { margin:0 0 18px; }
+.route-guide__links { list-style:none; padding:0; margin:0; }
+.route-guide__links li { margin:0; border-bottom:1px solid rgba(178,201,229,.17); }
+.route-guide__links li:last-child { border-bottom:0; }
+.route-guide__links a { display:block; padding:11px 12px; font-size:18px; line-height:1.5; color:var(--text); text-decoration:none; border-radius:6px; }
+.route-guide__links a:hover { background:rgba(178,201,229,.08); color:var(--gold); }
+.route-guide__links a:focus-visible { outline:2px solid var(--gold); }
+.route-guide__links a::after { content:" ↗"; color:var(--muted); font-size:15px; }
+.route-guide__extra-label { margin-top:15px !important; color:var(--muted); font-size:15px; }
+.route-guide__top { display:inline-block; margin-top:17px; font-size:15px; color:var(--muted); }
+.route-guide__draft-note { margin-top:28px !important; padding-top:16px; border-top:1px solid rgba(178,201,229,.24); font-size:16px; color:var(--muted); }
+@media(max-width:700px) { .route-guide__toc {grid-template-columns:1fr;} .route-guide__toc a {padding:14px;} .route-guide {font-size:17px;} }
+/* The mobile header stays above the page; native fragments must clear it. */
+@media(max-width:980px) {
+  main[data-page-id="BENEFITS-INDEX"] .route-guide__section {scroll-margin-top:5rem;}
+}

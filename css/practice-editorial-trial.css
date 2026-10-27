@@ -1,0 +1,200 @@
+/* Approved editorial practice standard for semantic articles that have exercises. */
+main:is([data-topic-id], [data-page-id]) .practice-block--editorial {
+  width: min(100%, var(--reading-prototype-block, 1040px));
+  max-width: none;
+  margin: 36px auto 42px;
+  padding: 25px 26px 24px;
+  background: linear-gradient(115deg, rgba(18, 48, 82, .41), rgba(17, 41, 78, .25));
+  border: 1px solid rgba(178, 201, 229, .35);
+  border-left: 3px solid rgba(228, 186, 106, .85);
+  border-radius: 14px;
+  box-shadow: none;
+}
+main:is([data-topic-id], [data-page-id]) .practice-block--editorial .practice-block__head {
+  display: block;
+}
+main:is([data-topic-id], [data-page-id]) .practice-block--editorial .practice-block__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 18px;
+  margin: 0 0 9px;
+}
+main:is([data-topic-id], [data-page-id]) .practice-block--editorial .practice-block__kind {
+  color: var(--gold);
+  font-size: 16px;
+  font-weight: 750;
+  line-height: 1.5;
+}
+main:is([data-topic-id], [data-page-id]) .practice-block--editorial .practice-block__eyebrow {
+  display: inline;
+  margin: 0;
+  text-transform: none;
+  color: var(--muted);
+  font-size: 15px;
+  font-weight: 450;
+  letter-spacing: 0;
+}
+main:is([data-topic-id], [data-page-id]) .practice-block--editorial h3 {
+  margin: 0 0 10px;
+  color: var(--gold);
+  font-size: 24px;
+  line-height: 1.4;
+}
+main:is([data-topic-id], [data-page-id]) .practice-block--editorial .practice-block__intro {
+  margin: 0 0 20px;
+  color: var(--text);
+  font-size: 18px;
+  line-height: 1.7;
+}
+main:is([data-topic-id], [data-page-id]) .practice-block--editorial .practice-services--editorial {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: 18px;
+  row-gap: 6px;
+  margin: 0 0 20px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+main:is([data-topic-id], [data-page-id]) .practice-services--editorial .practice-services__label {
+  color: var(--muted);
+  font-size: 15px;
+  white-space: nowrap;
+}
+main:is([data-topic-id], [data-page-id]) .practice-services--editorial .practice-services__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px 18px;
+  align-items: baseline;
+}
+main:is([data-topic-id], [data-page-id]) .practice-services--editorial .practice-service-link {
+  display: inline-flex;
+  min-height: 0;
+  padding: 3px 0;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  color: var(--link);
+  font: inherit;
+  font-size: 15px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+main:is([data-topic-id], [data-page-id]) .practice-services--editorial .practice-service-link::after {
+  content: "↗";
+  margin-left: 4px;
+  font-size: 12px;
+  text-decoration: none;
+}
+main:is([data-topic-id], [data-page-id]) .practice-services--editorial .practice-service-link:hover {
+  background: transparent;
+  border: 0;
+  color: var(--gold);
+}
+main:is([data-topic-id], [data-page-id]) .practice-services--editorial .practice-service-link:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+main:is([data-topic-id], [data-page-id]) .practice-prompts--editorial {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0;
+}
+main:is([data-topic-id], [data-page-id]) .practice-prompt--editorial {
+  min-width: 0;
+  padding: 18px 20px 20px;
+  background: rgba(9, 32, 63, .24);
+  border: 1px solid rgba(178, 201, 229, .18);
+  border-radius: 12px;
+  box-shadow: none;
+}
+main:is([data-topic-id], [data-page-id]) .practice-prompt--editorial .practice-prompt__head {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px 14px;
+}
+main:is([data-topic-id], [data-page-id]) .practice-prompt--editorial .practice-prompt__head strong {
+  font-size: 18px;
+  font-weight: 650;
+  color: var(--gold);
+}
+main:is([data-topic-id], [data-page-id]) .practice-prompt--editorial .practice-copy {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  padding: 5px 8px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  color: var(--link);
+  font-size: 14px;
+  text-decoration: none;
+}
+main:is([data-topic-id], [data-page-id]) .practice-prompt--editorial .practice-copy::before {
+  content: "⧉";
+  margin-right: 7px;
+  font-size: 18px;
+  line-height: 1;
+}
+main:is([data-topic-id], [data-page-id]) .practice-prompt--editorial .practice-copy:hover {
+  background: rgba(178, 201, 229, .08);
+  border-color: rgba(178, 201, 229, .24);
+}
+main:is([data-topic-id], [data-page-id]) .practice-prompt--editorial .practice-copy:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+main:is([data-topic-id], [data-page-id]) .practice-prompt--editorial .practice-copy.is-copied {
+  color: var(--gold);
+}
+main:is([data-topic-id], [data-page-id]) .practice-prompt--editorial .practice-prompt__text {
+  margin: 10px 0 0;
+  max-width: 82ch;
+  color: #f5f0e6;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 20px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.62;
+  letter-spacing: 0;
+}
+main:is([data-topic-id], [data-page-id]) .practice-step-note {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 15px 2px;
+  color: var(--text);
+  font-size: 19px;
+  font-weight: 600;
+  line-height: 1.55;
+}
+main:is([data-topic-id], [data-page-id]) .practice-step-note__arrow {
+  flex: none;
+  color: var(--gold);
+  font-size: 23px;
+  font-weight: 500;
+  line-height: 1;
+}
+main:is([data-topic-id], [data-page-id]) .practice-observe--editorial {
+  margin: 22px 0 0;
+  padding: 15px 0 0;
+  border-top: 1px solid rgba(178, 201, 229, .24);
+  font-size: 18px;
+}
+main:is([data-topic-id], [data-page-id]) .practice-observe--editorial > strong {
+  color: var(--muted);
+  font-size: 16px;
+  font-weight: 650;
+  letter-spacing: .045em;
+}
+main:is([data-topic-id], [data-page-id]) .practice-observe--editorial p {
+  margin: 8px 0 0;
+  color: var(--text);
+  font-size: 18px;
+  line-height: 1.65;
+}

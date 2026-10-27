@@ -1,0 +1,662 @@
+/* AI В ДЕЛО — compact UI density layer
+   Loaded after style.css. Keeps current interaction mechanics intact while
+   enforcing the product-specific density contract. */
+
+:root {
+    --ui-text-xs: 11px;
+    --ui-text-sm: 13px;
+    --ui-text-md: 15px;
+    --ui-text-lg: 18px;
+    --ui-text-xl: 24px;
+    --ui-heading-page: clamp(34px, 3.7vw, 50px);
+    --ui-heading-content: clamp(28px, 3.2vw, 36px);
+    --ui-space-1: 6px;
+    --ui-space-2: 10px;
+    --ui-space-3: 14px;
+    --ui-space-4: 18px;
+    --ui-space-5: 26px;
+    --ui-space-6: 40px;
+    --ui-control-h: 36px;
+    --ui-card-pad: 16px;
+    --ui-section-pad: 44px;
+    --ui-header-h: 60px;
+    --header-h: var(--ui-header-h);
+    --max: 1240px;
+}
+
+.shell {
+    width: min(calc(100% - 40px), var(--max));
+}
+
+.site-header__inner {
+    min-height: var(--ui-header-h);
+    gap: 18px;
+}
+
+.brand {
+    gap: 7px;
+}
+
+.brand__ai {
+    font-size: 21px;
+}
+
+.brand__text {
+    font-size: 16px;
+}
+
+.site-header__actions {
+    gap: 7px;
+}
+
+.header-action {
+    min-height: 34px;
+    gap: 6px;
+    padding: 0 10px;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.header-action__icon {
+    font-size: 16px;
+}
+
+.hero {
+    min-height: auto;
+}
+
+.hero__inner {
+    padding-top: 88px;
+    padding-bottom: 42px;
+}
+
+.hero__intro {
+    max-width: 840px;
+    margin-bottom: 20px;
+}
+
+.eyebrow,
+.utility-kicker {
+    font-size: 14px;
+}
+
+.hero__motto {
+    margin-top: 7px;
+    font-size: 16px;
+}
+
+.hero h1 {
+    max-width: 860px;
+    margin-top: 12px;
+    font-size: var(--ui-heading-page);
+    line-height: 1.02;
+    letter-spacing: -0.035em;
+}
+
+.hero__lead {
+    max-width: 700px;
+    margin-top: 12px;
+    font-size: 16px;
+    line-height: 1.45;
+}
+
+.entry-grid {
+    gap: 10px;
+}
+
+.entry-card {
+    min-height: 100px;
+    gap: 10px;
+    padding: 15px 16px;
+    border-radius: 11px;
+    box-shadow: 0 12px 30px rgba(1, 6, 25, 0.1);
+}
+
+.entry-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 36px rgba(1, 6, 25, 0.18);
+}
+
+.entry-card--featured {
+    min-height: 82px;
+    padding: 16px 18px;
+}
+
+.entry-card__number {
+    font-size: 14px;
+}
+
+.entry-card__body {
+    gap: 6px;
+}
+
+.entry-card__body strong {
+    font-size: clamp(17px, 1.35vw, 20px);
+    line-height: 1.2;
+}
+
+.entry-card--featured .entry-card__body strong {
+    font-size: clamp(21px, 2vw, 27px);
+}
+
+.entry-card__body span {
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+.entry-card__arrow {
+    font-size: 21px;
+}
+
+.hero__note {
+    margin-top: 14px;
+    font-size: 15px;
+    line-height: 1.45;
+}
+
+.workspace {
+    min-height: 0;
+    padding: 76px 0 48px;
+}
+
+.workspace__inner {
+    max-width: 1160px;
+}
+
+.workspace__topline {
+    gap: 14px;
+    margin-bottom: 18px;
+}
+
+.text-action {
+    padding: 5px 0;
+    font-size: 16px;
+}
+
+.depth-controls {
+    gap: 6px;
+    padding: 4px;
+    border-radius: 9px;
+}
+
+.depth-controls button {
+    min-height: 30px;
+    padding: 0 9px;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+.depth-controls span {
+    min-width: 132px;
+    font-size: 15px;
+}
+
+.content-card {
+    border-radius: 15px;
+    box-shadow: 0 18px 55px rgba(1, 5, 24, 0.25);
+}
+
+.content-card__head {
+    padding: 24px 28px;
+}
+
+.content-card__eyebrow {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.content-card h2 {
+    max-width: 930px;
+    font-size: var(--ui-heading-content);
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+}
+
+.content-card__lead {
+    max-width: 880px;
+    margin-top: 12px;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.content-card__body {
+    padding: 24px 28px 28px;
+}
+
+.content-card__body > p {
+    max-width: 880px;
+    margin-bottom: 14px;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.content-highlight {
+    margin: 18px 0;
+    padding: 14px 16px;
+    border-radius: 0 9px 9px 0;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.capability-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 9px;
+    margin-top: 20px;
+}
+
+.capability-card {
+    min-height: 0;
+    padding: 14px;
+    border-radius: 10px;
+}
+
+.capability-card strong {
+    margin-bottom: 6px;
+    font-size: 15px;
+}
+
+.capability-card p {
+    font-size: 16px;
+    line-height: 1.45;
+}
+
+.capability-card button {
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.example-panel {
+    margin: 18px 0;
+    padding: 16px;
+    border-radius: 11px;
+}
+
+.example-panel__label {
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.example-panel p {
+    font-size: 15px;
+    line-height: 1.55;
+}
+
+.compare-strip {
+    gap: 10px;
+    margin: 18px 0;
+}
+
+.compare-strip__box {
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.compare-strip__box strong {
+    margin-bottom: 6px;
+    font-size: 14px;
+}
+
+.compare-strip__box p {
+    font-size: 14px;
+    line-height: 1.48;
+}
+
+.compare-strip__arrow {
+    font-size: 21px;
+}
+
+.route-panel,
+.equalizer-intro {
+    margin-top: 16px;
+    padding: 16px;
+    border-radius: 11px;
+}
+
+.route-panel__head {
+    gap: 9px;
+    margin-bottom: 11px;
+}
+
+.route-panel__truck {
+    transform: scale(.84);
+    transform-origin: left center;
+}
+
+.route-panel__head strong {
+    font-size: 14px;
+}
+
+.route-panel__head span {
+    font-size: 15px;
+}
+
+.route-buttons {
+    gap: 7px;
+}
+
+.route-button {
+    min-height: 34px;
+    padding: 6px 10px;
+    border-radius: 7px;
+    font-size: 16px;
+}
+
+.equalizer-intro__head {
+    gap: 10px;
+}
+
+.equalizer-intro h3 {
+    font-size: 16px;
+}
+
+.equalizer-intro p {
+    margin-top: 5px;
+    font-size: 16px;
+    line-height: 1.45;
+}
+
+.equalizer-intro__levels {
+    gap: 6px;
+    margin-top: 12px;
+}
+
+.equalizer-intro__levels button,
+.equalizer-intro__skip {
+    min-height: 34px;
+    padding: 0 10px;
+    font-size: 16px;
+}
+
+.hachuha-fab {
+    right: 18px;
+    bottom: 18px;
+    min-height: 42px;
+    gap: 7px;
+    padding: 0 12px 0 9px;
+    font-size: 16px;
+}
+
+.hachuha-fab__truck {
+    transform: scale(.82);
+    transform-origin: center;
+}
+
+.hachuha-popover {
+    right: 18px;
+    bottom: 68px;
+    width: min(360px, calc(100vw - 28px));
+    padding: 15px;
+    border-radius: 12px;
+}
+
+.hachuha-popover__head strong {
+    margin-top: 3px;
+    font-size: 16px;
+}
+
+.hachuha-popover > p {
+    margin: 9px 0 11px;
+    font-size: 16px;
+    line-height: 1.45;
+}
+
+.hachuha-popover__routes {
+    gap: 6px;
+}
+
+.hachuha-popover__routes button {
+    min-height: 34px;
+    padding: 7px 9px;
+    border-radius: 7px;
+    font-size: 16px;
+}
+
+.drawer {
+    width: min(460px, 100vw);
+    padding: 20px;
+}
+
+.drawer__head {
+    gap: 14px;
+    padding-bottom: 13px;
+}
+
+.drawer__head h2 {
+    margin-top: 5px;
+    font-size: 24px;
+}
+
+.icon-button {
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    font-size: 20px;
+}
+
+.drawer__intro {
+    margin: 13px 0 18px;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.map-groups {
+    gap: 18px;
+}
+
+.map-group h3 {
+    margin-bottom: 7px;
+    font-size: 14px;
+}
+
+.map-group__items {
+    gap: 4px;
+}
+
+.map-item {
+    min-height: 39px;
+    grid-template-columns: 20px 1fr;
+    gap: 8px;
+    padding: 6px 8px;
+    border-radius: 7px;
+    font-size: 16px;
+}
+
+.map-item__mark {
+    width: 17px;
+    height: 17px;
+    font-size: 14px;
+}
+
+.setting-group {
+    padding: 16px 0;
+}
+
+.setting-group__head {
+    gap: 12px;
+    margin-bottom: 9px;
+}
+
+.setting-group h3 {
+    font-size: 14px;
+}
+
+.setting-group__head span,
+.setting-group > p,
+.switch-row small {
+    font-size: 15px;
+}
+
+.segmented {
+    gap: 5px;
+}
+
+.segmented button {
+    min-height: 36px;
+    padding: 5px 7px;
+    border-radius: 7px;
+    font-size: 16px;
+}
+
+.setting-group--switches {
+    gap: 11px;
+}
+
+.switch-row {
+    gap: 14px;
+}
+
+.switch-row strong {
+    font-size: 16px;
+}
+
+.reset-button {
+    min-height: 38px;
+    margin-top: 18px;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.site-footer__inner {
+    min-height: 72px;
+    gap: 20px;
+}
+
+.site-footer p {
+    font-size: 15px;
+}
+
+@media (max-width: 1000px) {
+    .capability-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 760px) {
+    :root {
+        --ui-header-h: 56px;
+        --header-h: 56px;
+    }
+
+    .shell {
+        width: min(calc(100% - 28px), var(--max));
+    }
+
+    .brand__ai {
+        font-size: 20px;
+    }
+
+    .header-action {
+        width: 36px;
+        min-height: 34px;
+    }
+
+    .hero__inner {
+        padding-top: 76px;
+        padding-bottom: 28px;
+    }
+
+    .hero__intro {
+        margin-bottom: 16px;
+    }
+
+    .hero h1 {
+        font-size: clamp(30px, 9vw, 36px);
+    }
+
+    .hero__lead {
+        font-size: 15px;
+    }
+
+    .entry-card,
+    .entry-card--featured {
+        min-height: 0;
+        padding: 14px;
+    }
+
+    .entry-card--featured .entry-card__body strong {
+        font-size: 22px;
+    }
+
+    .entry-card__body strong {
+        font-size: 18px;
+    }
+
+    .workspace {
+        padding: 68px 0 36px;
+    }
+
+    .workspace__topline {
+        margin-bottom: 14px;
+    }
+
+    .content-card__head,
+    .content-card__body {
+        padding: 18px;
+    }
+
+    .content-card h2 {
+        font-size: 28px;
+    }
+
+    .content-card__lead {
+        font-size: 15px;
+    }
+
+    .content-card__body > p,
+    .content-highlight,
+    .example-panel p {
+        font-size: 15px;
+    }
+
+    .capability-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .drawer {
+        height: min(84dvh, 720px);
+        padding: 18px 16px 22px;
+        border-radius: 16px 16px 0 0;
+    }
+
+    .drawer__head h2 {
+        font-size: 22px;
+    }
+
+    .hachuha-fab {
+        right: 12px;
+        bottom: 12px;
+    }
+
+    .hachuha-popover {
+        right: 12px;
+        bottom: 62px;
+    }
+
+    .site-footer__inner {
+        min-height: 0;
+        padding: 20px 0;
+    }
+}
+
+@media (max-width: 430px) {
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    .entry-card__body strong {
+        font-size: 17px;
+    }
+
+    .entry-card--featured .entry-card__body strong {
+        font-size: 21px;
+    }
+
+    .content-card h2 {
+        font-size: 27px;
+    }
+
+    .segmented--three,
+    .segmented--four {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}

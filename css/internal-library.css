@@ -1,0 +1,135 @@
+/* HTML-first reading geometry remains owned by internal-pages.css. */
+:root {
+ --internal-bg: var(--panel);
+ --internal-text: var(--text);
+ --internal-muted: var(--muted);
+ --internal-line: var(--line-strong);
+ --internal-link: var(--link);
+}
+main.internal-workspace {
+ width: min(calc(100% - clamp(42px, 8vw, 128px)), 1440px);
+ max-width: 1440px;
+ margin: clamp(12px, 1.8vh, 20px) auto clamp(12px, 1.8vh, 20px);
+ padding: clamp(24px, 2.5vw, 40px); background: var(--screen-background);
+ -webkit-backdrop-filter: var(--screen-filter); backdrop-filter: var(--screen-filter);
+ border: 1px solid var(--screen-line); border-left-color: var(--screen-warm-edge);
+ border-radius: var(--screen-radius); box-shadow: var(--screen-shadow), var(--screen-inset);
+}
+h1 { color: var(--gold); font-size: clamp(28px, 2.4vw, 40px); letter-spacing: -.025em; }
+h2, h3 { color: var(--gold); }
+.internal-article { font-size: 19px; line-height: 1.7; }
+.internal-article p { line-height: 1.7; }
+.internal-search { position: relative; width: min(100%, 320px); margin-left: auto; }
+.internal-search .site-search__field { background: var(--bg-deep); border-color: var(--line-strong); }
+.internal-search input { color: var(--text); }
+.internal-search input::placeholder { color: var(--soft); }
+.internal-search .site-search__panel { background: var(--bg-soft); border-color: var(--line-strong); width: min(520px, 100%); }
+.site-search__result:hover { background: var(--panel-soft); }
+.breadcrumbs { color: var(--muted); font-size: 1rem; }
+.breadcrumbs a { color: var(--link); }
+button { background: var(--panel-soft); color: var(--link); min-height: 44px; border-color: var(--line-strong); }
+button:hover { border-color: var(--gold); }
+.skip-link { position: absolute; left: 1rem; top: -10rem; z-index: 100; padding: .5rem 1rem; background: var(--bg-deep); }
+.skip-link:focus { top: .5rem; }
+.internal-footer { background: #112448ef; }
+.internal-footer .internal-workspace { width: min(calc(100% - clamp(42px, 8vw, 128px)), 1440px); margin-inline: auto; }
+@media(max-width: 560px) {
+ main.internal-workspace { margin-block: 16px 24px; padding: 24px 18px; box-shadow: inset 2px 0 0 #e4ba6a20, -8px 0 24px #bc813410; }
+ .internal-search { width: 100%; }
+ h1 { font-size: 28px; }
+ .breadcrumbs { font-size: 16px; }
+ .internal-layout[data-toc-mode="trigger"] .toc-controls { margin-bottom: 1.5rem; }
+}
+
+/* Owner-approved 0.80 panel opacity on readable internal pages only.
+   Applies to the background layer, never opacity on the element or text.
+   Home uses the original --screen-background from library-shell.css.
+   At mobile widths without the background raster, retain existing fill. */
+@media (min-width: 561px) {
+ @supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  body.html-first main.internal-workspace {
+   --screen-background:
+      radial-gradient(ellipse at 0% 55%, #e4ba6a16, transparent 48%),
+      radial-gradient(ellipse at 100% 0%, #8fc7d90c, transparent 55%),
+      linear-gradient(115deg, #173366cc, #142a52cc 52%, #182e5acc);
+  }
+ }
+}
+
+/* Internal page layout study: predictable top-to-article flow and shared frame.
+   Only presentation changes; page text and generated HTML are untouched. */
+body.html-first main.internal-workspace {
+ display: grid;
+ grid-template-columns: minmax(0, 1fr) minmax(0, 320px);
+ grid-template-areas: "breadcrumb search" "title controls" "layout layout";
+ column-gap: 28px;
+ row-gap: 12px;
+ align-content: start;
+}
+body.html-first main.internal-workspace > .internal-search {
+ grid-area: search;
+ width: 100%;
+ align-self: center;
+ justify-self: end;
+ margin: 0;
+}
+body.html-first main.internal-workspace > .breadcrumbs {
+ grid-area: breadcrumb;
+ align-self: center;
+ margin: 0;
+ min-width: 0;
+}
+body.html-first main.internal-workspace > .breadcrumbs ol { margin: 0; }
+body.html-first main.internal-workspace > h1 {
+ grid-area: title;
+ margin: 0;
+ align-self: center;
+ font: 400 clamp(35px, 3.1vw, 48px)/1.14 'Forum', Georgia, serif;
+ letter-spacing: -.018em;
+ color: var(--gold);
+}
+body.html-first:not(.topic-page) main.internal-workspace > h1 {
+ grid-column: 1 / -1;
+}
+body.html-first main.internal-workspace > .topic-reading-controls {
+ grid-area: controls;
+ align-self: center;
+ justify-self: end;
+ margin: 0;
+}
+body.html-first main.internal-workspace > .internal-layout {
+ grid-area: layout;
+ min-width: 0;
+ margin-top: 12px;
+}
+body.html-first main.internal-workspace .internal-content { min-width: 0; }
+@media (max-width: 980px) {
+ body.html-first main.internal-workspace {
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas: "search" "breadcrumb" "title" "controls" "layout";
+  row-gap: 12px;
+ }
+ body.html-first main.internal-workspace > h1 { font-size: clamp(32px, 4.6vw, 43px); }
+ body.html-first main.internal-workspace > .topic-reading-controls { justify-self: start; }
+ body.html-first main.internal-workspace > .internal-layout { margin-top: 8px; }
+}
+@media (max-width: 560px) {
+ body.html-first main.internal-workspace,
+ body.html-first .internal-footer .internal-workspace { width: calc(100% - 24px); }
+ body.html-first main.internal-workspace { margin-block: 12px 20px; padding: 20px 16px 28px; }
+ body.html-first main.internal-workspace > h1 { font-size: clamp(31px, 8vw, 38px); }
+}
+
+/* About: align the title with the centered reading column, not the first
+   column of the breadcrumb/search desktop grid. No mobile/layout changes. */
+@media (min-width: 981px) {
+ body.html-first main.internal-workspace[data-topic-id="ABOUT_SITE"] {
+  grid-template-areas: "breadcrumb search" "title title" "layout layout";
+ }
+ body.html-first main.internal-workspace[data-topic-id="ABOUT_SITE"] > #page-title {
+  grid-column: 1 / -1;
+  width: min(100%, var(--reading-prototype-body));
+  justify-self: center;
+  margin-inline: auto;
+ }
+}

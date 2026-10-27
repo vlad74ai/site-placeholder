@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 480" role="img" aria-labelledby="title desc">
+<title id="title">Цикл работы с ИИ</title><desc id="desc">Задача, ответ, проверка и уточнение. Уточнение возвращает разговор к следующему ответу.</desc>
+<defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto"><path d="M0 0 8 4 0 8" fill="none" stroke="#e4ba6a" stroke-width="1.5"/></marker></defs>
+<rect width="720" height="480" rx="20" fill="#142b4f"/>
+<g fill="#21385d" stroke="#b7cee35c"><rect x="42" y="68" width="262" height="108" rx="14"/><rect x="410" y="68" width="262" height="108" rx="14"/><rect x="410" y="292" width="262" height="108" rx="14"/><rect x="42" y="292" width="262" height="108" rx="14"/></g>
+<g fill="#f1ebdd" font-family="Manrope,Segoe UI,Arial,sans-serif" font-size="30" text-anchor="middle"><text x="173" y="134">Задача</text><text x="541" y="134">Ответ</text><text x="541" y="358">Проверка</text><text x="173" y="358">Уточнение</text></g>
+<g fill="none" stroke="#e4ba6a" stroke-width="3" marker-end="url(#arrow)"><path d="M315 122H395"/><path d="M541 188V276"/><path d="M398 346H320"/><path d="M173 280V240Q173 222 193 222H360Q380 222 380 202V157Q380 122 398 122"/></g>
+<text x="360" y="453" fill="#c7cdd6" font-family="Manrope,Segoe UI,Arial,sans-serif" font-size="22" text-anchor="middle">Столько шагов, сколько нужно задаче</text>
+</svg>

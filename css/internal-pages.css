@@ -1,0 +1,150 @@
+/* Shared HTML-first shell. No legacy stylesheet or page-ID selectors.
+   Widths are prototype hypotheses; TOC fit uses their actual measured size. */
+@font-face {
+  font-family: Manrope;
+  src: url("../assets/fonts/manrope-cyrillic-wght-normal.woff2") format("woff2");
+  font-weight: 200 800;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
+}
+@font-face {
+  font-family: Manrope;
+  src: url("../assets/fonts/manrope-latin-wght-normal.woff2") format("woff2");
+  font-weight: 200 800;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+:root {
+  color-scheme: dark;
+  --internal-bg: #0b1130;
+  --internal-text: #f8f9ff;
+  --internal-muted: #c2caeb;
+  --internal-line: rgba(175, 190, 255, 0.34);
+  --internal-link: #76dfff;
+  --internal-reading: 68ch;
+  --internal-breakout: 88ch;
+  --internal-toc: 18rem;
+  --internal-rail: 3.5rem;
+  --internal-gap: 2rem;
+}
+* { box-sizing: border-box; }
+html { scrollbar-gutter: stable; }
+[hidden] { display: none !important; }
+body {
+  margin: 0;
+  background: var(--internal-bg);
+  color: var(--internal-text);
+  font: 1rem/1.7 Manrope, "Segoe UI", Arial, sans-serif;
+}
+a { color: var(--internal-link); text-underline-offset: .2em; }
+input, button { font: inherit; }
+button {
+  color: var(--internal-text);
+  background: #111a46;
+  border: 1px solid var(--internal-line);
+  border-radius: .4rem;
+  padding: .5rem .75rem;
+  cursor: pointer;
+}
+:focus-visible { outline: 2px solid var(--internal-link); outline-offset: .25rem; }
+.internal-workspace {
+  width: min(100% - 2rem, 80rem);
+  margin-inline: auto;
+  padding-block: 1.5rem;
+  overflow-wrap: anywhere;
+}
+.width-reading { width: 100%; max-width: var(--internal-reading); }
+.width-breakout { width: 100%; max-width: var(--internal-breakout); }
+.width-field { width: 100%; max-width: none; }
+.internal-article, .internal-article section { min-width: 0; }
+.internal-content { min-width: 0; }
+.internal-layout { position: relative; }
+.internal-layout[data-toc-mode="expanded"],
+.internal-layout[data-toc-mode="rail"] {
+  display: grid;
+  grid-template-columns: var(--internal-toc) minmax(0, 1fr);
+  gap: var(--internal-gap);
+  align-items: start;
+}
+.internal-layout[data-toc-mode="rail"] { grid-template-columns: var(--internal-rail) minmax(0, 1fr); }
+.internal-layout[data-toc-mode="expanded"] .internal-sidebar,
+.internal-layout[data-toc-mode="rail"] .internal-sidebar {
+  position: sticky;
+  top: 1rem;
+  max-height: calc(100dvh - 2rem);
+  overflow-y: auto;
+}
+.toc-controls { display: flex; flex-wrap: wrap; gap: .5rem; margin-block-end: 1rem; }
+[data-toc-mode="rail"] .toc-open-label { display: none; }
+.toc-metrics { position: absolute; width: 0; height: 0; overflow: hidden; visibility: hidden; contain: strict; }
+.toc-metrics span { display: block; height: 0; }
+h1 { color: #c4a3ff; font-size: 2rem; line-height: 1.25; }
+h2 { font-size: 1.4rem; line-height: 1.4; margin-block: 2.5rem 1rem; }
+p, ul, ol { margin-block: 1rem; }
+li + li { margin-block-start: .4rem; }
+.skip-link { display: inline-block; margin: .5rem 1rem; }
+.internal-header { border-block-end: 1px solid var(--internal-line); }
+.internal-brand { color: var(--internal-text); font-weight: 800; }
+.internal-menu { display: flex; flex-wrap: wrap; gap: .75rem 1.5rem; padding: 0; list-style: none; }
+.internal-menu > li { margin: 0; }
+summary { cursor: pointer; }
+.internal-menu details ul { padding-inline-start: 1.25rem; }
+.unavailable-note { display: block; color: var(--internal-muted); font-size: .875rem; }
+.breadcrumbs ol { display: flex; flex-wrap: wrap; gap: .5rem 1rem; padding: 0; list-style: none; }
+.breadcrumbs li { margin: 0; }
+.breadcrumbs li + li::before { content: "/"; margin-inline-end: 1rem; color: var(--internal-muted); }
+.internal-toc { padding-block: 1rem; border-block: 1px solid var(--internal-line); }
+.process-sequence { padding-inline-start: 1.75rem; }
+.copyable-block { border-inline-start: .2rem solid var(--internal-line); padding-inline-start: 1rem; }
+.copyable-text { white-space: pre-wrap; user-select: text; }
+.copy-status { font-size: .875rem; color: var(--internal-muted); }
+.copy-status:empty { margin: 0; }
+.checklist { padding: 0; border: 0; margin: 1rem 0; min-width: 0; }
+.checklist-item { display: flex; align-items: flex-start; gap: .75rem; margin-block: .75rem; }
+.checklist-item input { flex: none; margin-block-start: .4em; accent-color: #c4a3ff; }
+.checklist-item label { cursor: pointer; }
+.context-exit { border-block-start: 1px solid var(--internal-line); margin-block-start: 2rem; }
+.internal-footer { border-block-start: 1px solid var(--internal-line); color: var(--internal-muted); }
+.internal-modal-open { overflow: hidden; }
+.toc-dialog {
+  background: var(--internal-bg);
+  color: var(--internal-text);
+  border: 1px solid var(--internal-line);
+  border-radius: .5rem;
+  padding: 1.5rem;
+  width: min(36rem, calc(100% - 2rem));
+  max-height: calc(100dvh - 2rem);
+  overflow: auto;
+  overscroll-behavior: contain;
+  overflow-wrap: anywhere;
+}
+.toc-dialog::backdrop { background: rgba(7, 12, 34, .8); }
+.toc-dialog h2 { margin-block: 0 1rem; }
+.toc-dialog li { margin-block: 1rem; }
+
+/* Reusable structural comparison. Each pair owns its before/after order so
+   narrow layouts preserve semantic pairing without page-specific rules. */
+.comparison-list {
+  display: grid;
+  gap: 1.5rem;
+  margin-block: 1.5rem;
+}
+.comparison-pair {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr));
+  gap: 1rem;
+}
+.comparison-side {
+  min-width: 0;
+  border: 1px solid var(--internal-line);
+  border-radius: .5rem;
+  padding: 1rem;
+}
+.comparison-label {
+  margin-block-start: 0;
+  color: var(--internal-muted);
+}
+.comparison-side > :last-child { margin-block-end: 0; }
+.comparison-bridge { margin-block: 0; }

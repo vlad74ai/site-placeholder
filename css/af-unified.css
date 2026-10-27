@@ -1,0 +1,32 @@
+/* Approved prose assembled as sections of one core article; links may target the section. */
+main[data-page-id] .af-unified-section{scroll-margin-top:7rem;padding:0 0 1.5rem;margin:0 0 2.5rem;border-bottom:1px solid rgba(178,201,229,.22)}
+main[data-page-id] .af-unified-section>h2{font-size:clamp(23px,2.1vw,30px);margin:1.6rem 0 1rem}
+main[data-page-id] .af-section-copy .topic-section{margin-bottom:1.4rem}
+main[data-page-id] .af-section-copy .content-highlight{margin:1rem 0}
+main[data-page-id] .af-section-copy img{max-width:100%;height:auto}
+
+/* Direct links also target plain B-P1 sections, not just merged sections. */
+main[data-page-id] .af-preview-copy [id] { scroll-margin-top:7rem; }
+
+/* W13: public A–F only. Historical originals do not load this stylesheet. */
+main[data-af-preview]:not([data-page-id="AF-ORIGINALS-PREVIEW"]) .af-preview-copy {
+  max-width: 1040px;
+}
+/* The inherited 22px paragraph margin was adding empty space inside a
+   bordered example while its outer margin remained zero. */
+main[data-af-preview]:not([data-page-id="AF-ORIGINALS-PREVIEW"]) .af-preview-copy .example-panel {
+  margin-block: 0 24px;
+}
+main[data-af-preview]:not([data-page-id="AF-ORIGINALS-PREVIEW"]) .af-preview-copy .example-panel > p {
+  margin: 10px 0 0;
+}
+main[data-af-preview]:not([data-page-id="AF-ORIGINALS-PREVIEW"]) .af-preview-copy .example-panel > :last-child {
+  margin-bottom: 0;
+}
+/* Let the browser improve short final lines without inserting hard breaks
+   or changing the author's paragraph boundaries. */
+main[data-page-id="D-P1"] .af-preview-copy p { text-wrap: pretty; }
+@media (max-width:980px) {
+  main[data-page-id] .af-unified-section,
+  main[data-page-id] .af-preview-copy [id] { scroll-margin-top:9rem; }
+}

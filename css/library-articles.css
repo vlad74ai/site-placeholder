@@ -1,0 +1,54 @@
+/* Continuous HTML reading for migrated semantic topics. */
+.topic-preview { color: var(--soft); font-size: 16px; }
+.topic-reading-controls { display: flex; justify-content: flex-end; margin: 20px 0 24px; }
+.topic-page .depth-controls { display: inline-flex; align-items: center; gap: 12px; background: var(--component-fill); border: 1px solid var(--line-strong); border-radius: var(--control-radius); padding: 4px; }
+.topic-page .depth-controls button { background: transparent; border: 0; padding: 8px 12px; }
+.topic-page .depth-controls span { font-size: 16px; color: var(--muted); }
+.topic-page .depth-controls button:disabled { color: var(--soft); cursor: default; }
+.topic-section { margin-block: 0 24px; scroll-margin-top: 24px; }
+.topic-section > p { max-width: var(--internal-reading); }
+.topic-section h3 { font-size: 22px; line-height: 1.4; margin: 0 0 16px; color: var(--gold); }
+.topic-section :is(.example-panel, .content-highlight, .compare-strip, .capability-grid, .illustrated-block, .practice-block) { margin-block: 24px; }
+.topic-section > :first-child { margin-top: 0; }
+.topic-section > :last-child { margin-bottom: 0; }
+.topic-section .content-highlight { border-left: 3px solid var(--gold); padding: 20px; line-height: 1.7; }
+.topic-section .example-panel__label { display: block; font-size: 15px; font-weight: 750; letter-spacing: .1em; text-transform: uppercase; }
+.topic-section .example-panel p { margin: 12px 0 0; }
+.topic-section .compare-strip { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: 16px; }
+.topic-section .compare-strip__box > strong { display: block; }
+.topic-section .compare-strip__box p { margin: 12px 0 0; }
+.topic-section .compare-strip__arrow { display: grid; place-items: center; font-size: 24px; }
+.topic-section .capability-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 16px; }
+.topic-section .capability-card > strong { display: block; }
+.topic-section .capability-card p { margin: 12px 0 0; font-size: 16px; color: var(--muted); }
+/* Text-only presentation until illustrations can be placed where they explain the text. */
+.topic-section .illustrated-block { display: block; max-width: var(--internal-reading); }
+.topic-section .illustrated-block__text > :first-child { margin-top: 0; }
+.topic-section .illustrated-block__text > :last-child { margin-bottom: 0; }
+.topic-section .practice-block__head { display: flex; align-items: start; justify-content: space-between; gap: 16px; }
+.topic-section .practice-block__eyebrow { display: block; font-size: 15px; margin-bottom: 10px; text-transform: uppercase; letter-spacing: .08em; }
+.topic-section .practice-block__mark { font-size: 24px; }
+.topic-section .practice-block__intro { font-size: 16px; color: var(--muted); }
+.topic-section .practice-services { display: grid; gap: 12px; margin: 20px 0; }
+.topic-section .practice-services__intro { display: grid; gap: 6px; font-size: 16px; }
+.topic-section .practice-services__intro span { color: var(--muted); }
+.topic-section .practice-services__links { display: flex; flex-wrap: wrap; gap: 8px; }
+.topic-section .practice-services--compact { display: flex; flex-wrap: wrap; align-items: center; }
+.topic-section .practice-service-link, .topic-section .practice-copy { display: inline-flex; align-items: center; min-height: 44px; padding: 10px 14px; border: 1px solid var(--line-strong); border-radius: var(--control-radius); color: var(--link); background: var(--panel-soft); font: inherit; font-size: 16px; line-height: 1.5; text-decoration: none; cursor: pointer; }
+.topic-section .practice-service-link:hover, .topic-section .practice-copy:hover { border-color: var(--gold); background: #30496d; }
+.topic-section .practice-copy.is-copied { border-color: var(--gold); }
+.topic-section .practice-prompts { display: grid; gap: 16px; }
+.topic-section .practice-prompt__head { display: flex; gap: 12px; justify-content: space-between; }
+.topic-section .practice-prompt__head strong { font-size: 16px; }
+.topic-section .practice-prompt__text { margin: 16px 0 0; white-space: pre-wrap; font-size: 17px; }
+.topic-section .practice-observe { border-top: 1px solid var(--line-strong); margin-top: 20px; padding-top: 16px; font-size: 16px; }
+.topic-section .practice-observe > strong { font-size: 16px; text-transform: uppercase; letter-spacing: .06em; }
+.topic-section .practice-observe p { margin: 10px 0 0; color: var(--muted); }
+.topic-page .context-exit ul { padding-left: 20px; }
+.topic-page .context-exit a { display: inline-block; padding-block: 6px; }
+@media (max-width: 560px) {
+  .topic-section .compare-strip { grid-template-columns: minmax(0, 1fr); }
+  .topic-section .compare-strip__arrow { transform: rotate(90deg); }
+  .topic-section .practice-block__mark { display: none; }
+  .topic-reading-controls { justify-content: flex-start; }
+}
