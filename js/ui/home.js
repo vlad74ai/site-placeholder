@@ -132,7 +132,19 @@ export function renderHomeOverview(container, overview, presentation = {}, level
     startDisclosure.open = true;
     const summary = startDisclosure.querySelector('summary');
     summary.focus({ preventScroll: true });
-    summary.scrollIntoView({ block: 'nearest' });
+    // Native 'nearest' scrolling leaves §5 low in the viewport on small screens.
+    // Let details above collapse, then align the chosen section below the sticky header.
+    requestAnimationFrame(() => {
+      const header = document.querySelector('.site-header');
+      const headerOffset = window.matchMedia('(max-width: 980px)').matches && header &&
+        ['sticky', 'fixed'].includes(getComputedStyle(header).position)
+        ? header.getBoundingClientRect().height : 0;
+      const targetTop = window.scrollY + summary.getBoundingClientRect().top - headerOffset - 12;
+      window.scrollTo({
+        top: Math.max(0, Math.round(targetTop)),
+        behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
+      });
+    });
   });
   disclosures.forEach((disclosure) => {
     disclosure.addEventListener('toggle', () => {
