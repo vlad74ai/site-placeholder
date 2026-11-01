@@ -5,4 +5,5 @@
 .blog-index .blog-card p:last-child { margin-block-end: 0; }
 .blog-note { color: var(--soft); font-size: 15px; line-height: 1.5; }
 .blog-article-body > .blog-note { margin-block: 0 22px; }
+.blog-article-body .blog-emphasis--gold { color: var(--gold); font-weight: 700; }
 .blog-back { margin-block-start: 35px; padding-block-start: 18px; border-top: 1px solid var(--line-strong); }
