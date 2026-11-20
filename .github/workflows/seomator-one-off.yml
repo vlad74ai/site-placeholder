@@ -23,7 +23,7 @@ jobs:
         shell: bash
         run: |
           set +e
-          npx --yes @seomator/seo-audit@8.0.1 audit 'https://ai-v-delo.ru/' --crawl --max-pages 30 --concurrency 2 --timeout 12000 --max-duration 120 --format json --output "$RUNNER_TEMP/seomator-site.json" --no-save --fail-under 0 > "$RUNNER_TEMP/seomator-run.log" 2>&1
+          npx --yes @seomator/seo-audit@8.0.1 audit 'https://ai-v-delo.ru/' --crawl --max-pages 60 --concurrency 2 --timeout 12000 --max-duration 180 --format json --output "$RUNNER_TEMP/seomator-site.json" --no-save --fail-under 0 > "$RUNNER_TEMP/seomator-run.log" 2>&1
           exit_code=$?
           printf '%s\n' "$exit_code" > "$RUNNER_TEMP/seomator-exit-code.txt"
           tail -n 30 "$RUNNER_TEMP/seomator-run.log"
