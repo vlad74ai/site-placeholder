@@ -1,0 +1,41 @@
+name: One-off SEOmator audit (read-only)
+
+on:
+  push:
+    branches:
+      - audit/seomator-20261120
+    paths:
+      - .github/workflows/seomator-one-off.yml
+
+permissions: {}
+
+jobs:
+  seo_audit:
+    if: github.ref == 'refs/heads/audit/seomator-20261120'
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Prepare isolated Node.js runner
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Audit public website (read-only, no repo checkout)
+        shell: bash
+        run: |
+          set +e
+          npx --yes @seomator/seo-audit@8.0.1 audit 'https://ai-v-delo.ru/' --crawl --max-pages 30 --concurrency 2 --timeout 12000 --max-duration 120 --format json --output "$RUNNER_TEMP/seomator-site.json" --no-save --fail-under 0 > "$RUNNER_TEMP/seomator-run.log" 2>&1
+          exit_code=$?
+          printf '%s\n' "$exit_code" > "$RUNNER_TEMP/seomator-exit-code.txt"
+          tail -n 30 "$RUNNER_TEMP/seomator-run.log"
+          exit 0
+      - name: Preserve audit findings and execution log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: seomator-ai-v-delo-one-off
+          path: |
+            ${{ runner.temp }}/seomator-site.json
+            ${{ runner.temp }}/seomator-run.log
+            ${{ runner.temp }}/seomator-exit-code.txt
+          retention-days: 7
+          if-no-files-found: warn
